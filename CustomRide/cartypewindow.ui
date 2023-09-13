@@ -1,49 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>CarType</class>
- <widget class="QMainWindow" name="CarType">
+ <class>carTypeWindow</class>
+ <widget class="QMainWindow" name="carTypeWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>254</width>
-    <height>242</height>
+    <width>286</width>
+    <height>234</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label">
+   <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>40</y>
-      <width>111</width>
-      <height>16</height>
+      <x>110</x>
+      <y>140</y>
+      <width>61</width>
+      <height>32</height>
      </rect>
     </property>
     <property name="text">
-     <string>Select a car type : </string>
+     <string>Done</string>
     </property>
    </widget>
    <widget class="QComboBox" name="comboBox">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>60</y>
-      <width>151</width>
-      <height>71</height>
+      <x>90</x>
+      <y>80</y>
+      <width>103</width>
+      <height>32</height>
      </rect>
     </property>
     <item>
      <property name="text">
-      <string>Hatch Back</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>SUV</string>
+      <string> </string>
      </property>
     </item>
     <item>
@@ -53,12 +48,12 @@
     </item>
     <item>
      <property name="text">
-      <string>Coupe</string>
+      <string>Hatchback</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Station Wagon</string>
+      <string>SUV</string>
      </property>
     </item>
     <item>
@@ -68,21 +63,26 @@
     </item>
     <item>
      <property name="text">
+      <string>Station Wagon</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
       <string>Truck</string>
      </property>
     </item>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>130</y>
-      <width>51</width>
-      <height>32</height>
+      <x>90</x>
+      <y>30</y>
+      <width>111</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>Done</string>
+     <string>Select a car type :</string>
     </property>
    </widget>
   </widget>
@@ -91,7 +91,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>254</width>
+     <width>286</width>
      <height>24</height>
     </rect>
    </property>
