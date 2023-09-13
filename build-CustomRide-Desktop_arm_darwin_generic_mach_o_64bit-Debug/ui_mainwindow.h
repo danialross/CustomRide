@@ -45,7 +45,7 @@ public:
         centralwidget->setObjectName("centralwidget");
         label = new QLabel(centralwidget);
         label->setObjectName("label");
-        label->setGeometry(QRect(170, 30, 151, 16));
+        label->setGeometry(QRect(170, 20, 151, 16));
         typeButton = new QPushButton(centralwidget);
         typeButton->setObjectName("typeButton");
         typeButton->setGeometry(QRect(10, 70, 100, 61));
