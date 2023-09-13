@@ -13,3 +13,42 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
+
+
+void MainWindow::on_cylinderButton_clicked()
+{
+
+}
+
+void MainWindow::on_displacementButton_clicked()
+{
+
+}
+
+void MainWindow::on_driveTrainButton_clicked()
+{
+
+}
+
+void MainWindow::on_exitButton_clicked()
+{
+
+}
+
+void MainWindow::on_fuelButton_clicked()
+{
+
+}
+
+void MainWindow::on_transButton_clicked()
+{
+
+}
+
+void MainWindow::on_typeButton_clicked()
+{
+
+}
+
+
