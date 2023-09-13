@@ -1,11 +1,13 @@
-#pragma once
 /********************************************************************************
-** Form generated from reading UI file ''
+** Form generated from reading UI file 'mainwindow.ui'
 **
 ** Created by: Qt User Interface Compiler version 6.5.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
+
+#ifndef UI_MAINWINDOW_H
+#define UI_MAINWINDOW_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
@@ -57,7 +59,7 @@ public:
         driveTrainButton->setObjectName("driveTrainButton");
         driveTrainButton->setGeometry(QRect(390, 140, 100, 61));
         fuelButton = new QPushButton(centralwidget);
-        fuelButton->setObjectName("modelButton");
+        fuelButton->setObjectName("fuelButton");
         fuelButton->setGeometry(QRect(390, 210, 100, 61));
         transButton = new QPushButton(centralwidget);
         transButton->setObjectName("transButton");
@@ -105,3 +107,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
+#endif // UI_MAINWINDOW_H

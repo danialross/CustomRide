@@ -79,7 +79,7 @@
      <string>Drive Train</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="modelButton">
+   <widget class="QPushButton" name="fuelButton">
     <property name="geometry">
      <rect>
       <x>390</x>
@@ -89,7 +89,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Model</string>
+     <string>Fuel</string>
     </property>
    </widget>
    <widget class="QPushButton" name="transButton">

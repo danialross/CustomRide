@@ -6,6 +6,7 @@ carTypeWindow::carTypeWindow(QWidget *parent) :
     ui(new Ui::carTypeWindow)
 {
     ui->setupUi(this);
+
 }
 
 carTypeWindow::~carTypeWindow()

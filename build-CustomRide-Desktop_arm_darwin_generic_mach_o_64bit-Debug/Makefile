@@ -17,7 +17,7 @@ CXX           = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefau
 DEFINES       = -DQT_QML_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -g $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -mmacosx-version-min=11.0 -Wall -Wextra $(DEFINES)
 CXXFLAGS      = -pipe -stdlib=libc++ -g -std=gnu++1z $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -mmacosx-version-min=11.0 -Wall -Wextra $(DEFINES)
-INCPATH       = -I../CustomRide -I. -I../../../../Qt/6.5.2/macos/lib/QtWidgets.framework/Headers -I../../../../Qt/6.5.2/macos/lib/QtGui.framework/Headers -I../../../../Qt/6.5.2/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/System/Library/Frameworks/AGL.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/System/Library/Frameworks/AGL.framework/Headers -I../../../../Qt/6.5.2/macos/mkspecs/macx-clang -F/Users/danialross/Qt/6.5.2/macos/lib
+INCPATH       = -I../CustomRide -I. -I/usr/bin/curl -I../../../../Qt/6.5.2/macos/lib/QtWidgets.framework/Headers -I../../../../Qt/6.5.2/macos/lib/QtGui.framework/Headers -I../../../../Qt/6.5.2/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/System/Library/Frameworks/AGL.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/System/Library/Frameworks/AGL.framework/Headers -I../../../../Qt/6.5.2/macos/mkspecs/macx-clang -F/Users/danialross/Qt/6.5.2/macos/lib
 QMAKE         = /Users/danialross/Qt/6.5.2/macos/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -40,7 +40,7 @@ DISTNAME      = CustomRide1.0.0
 DISTDIR = /Users/danialross/Documents/GitHub/CustomRide/build-CustomRide-Desktop_arm_darwin_generic_mach_o_64bit-Debug/.tmp/CustomRide1.0.0
 LINK          = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
 LFLAGS        = -stdlib=libc++ -headerpad_max_install_names $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -mmacosx-version-min=11.0 -Wl,-rpath,@executable_path/../Frameworks -Wl,-rpath,/Users/danialross/Qt/6.5.2/macos/lib
-LIBS          = $(SUBLIBS) -F/Users/danialross/Qt/6.5.2/macos/lib -framework QtWidgets -framework QtGui -framework AppKit -framework ImageIO -framework Metal -framework QtCore -framework IOKit -framework DiskArbitration -framework AGL -framework OpenGL   
+LIBS          = $(SUBLIBS) -F/Users/danialross/Qt/6.5.2/macos/lib -lcurl -framework QtWidgets -framework QtGui -framework AppKit -framework ImageIO -framework Metal -framework QtCore -framework IOKit -framework DiskArbitration -framework AGL -framework OpenGL   
 AR            = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar cq
 RANLIB        = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib -s
 SED           = sed
@@ -52,10 +52,16 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../CustomRide/main.cpp \
-		../CustomRide/mainwindow.cpp moc_mainwindow.cpp
-OBJECTS       = main.o \
+SOURCES       = ../CustomRide/cartypewindow.cpp \
+		../CustomRide/httprequest.cpp \
+		../CustomRide/main.cpp \
+		../CustomRide/mainwindow.cpp moc_cartypewindow.cpp \
+		moc_mainwindow.cpp
+OBJECTS       = cartypewindow.o \
+		httprequest.o \
+		main.o \
 		mainwindow.o \
+		moc_cartypewindow.o \
 		moc_mainwindow.o
 DIST          = ../../../../Qt/6.5.2/macos/mkspecs/features/spec_pre.prf \
 		../../../../Qt/6.5.2/macos/mkspecs/features/device_config.prf \
@@ -325,6 +331,7 @@ DIST          = ../../../../Qt/6.5.2/macos/mkspecs/features/spec_pre.prf \
 		../../../../Qt/6.5.2/macos/mkspecs/features/qt_config.prf \
 		../../../../Qt/6.5.2/macos/mkspecs/macx-clang/qmake.conf \
 		../../../../Qt/6.5.2/macos/mkspecs/features/spec_post.prf \
+		../CustomRide/.qmake.stash \
 		../../../../Qt/6.5.2/macos/mkspecs/features/exclusive_builds.prf \
 		../../../../Qt/6.5.2/macos/mkspecs/features/mac/sdk.prf \
 		../../../../Qt/6.5.2/macos/mkspecs/features/toolchain.prf \
@@ -354,7 +361,11 @@ DIST          = ../../../../Qt/6.5.2/macos/mkspecs/features/spec_pre.prf \
 		../../../../Qt/6.5.2/macos/mkspecs/features/exceptions.prf \
 		../../../../Qt/6.5.2/macos/mkspecs/features/yacc.prf \
 		../../../../Qt/6.5.2/macos/mkspecs/features/lex.prf \
-		../CustomRide/CustomRide.pro ../CustomRide/mainwindow.h ../CustomRide/main.cpp \
+		../CustomRide/CustomRide.pro ../CustomRide/cartypewindow.h \
+		../CustomRide/httprequest.h \
+		../CustomRide/mainwindow.h ../CustomRide/cartypewindow.cpp \
+		../CustomRide/httprequest.cpp \
+		../CustomRide/main.cpp \
 		../CustomRide/mainwindow.cpp
 QMAKE_TARGET  = CustomRide
 DESTDIR       = 
@@ -364,7 +375,7 @@ TARGET        = CustomRide.app/Contents/MacOS/CustomRide
 EXPORT_QMAKE_MAC_SDK = macosx
 EXPORT_QMAKE_MAC_SDK_VERSION = 13.3
 EXPORT_QMAKE_XCODE_DEVELOPER_PATH = /Applications/Xcode.app/Contents/Developer
-EXPORT__QMAKE_STASH_ = 
+EXPORT__QMAKE_STASH_ = /Users/danialross/Documents/GitHub/CustomRide/build-CustomRide-Desktop_arm_darwin_generic_mach_o_64bit-Debug/.qmake.stash
 EXPORT_VALID_ARCHS = x86_64 arm64
 EXPORT_DEFAULT_ARCHS = arm64
 EXPORT_ARCHS = $(filter $(EXPORT_VALID_ARCHS), $(if $(ARCHS), $(ARCHS), $(if $(EXPORT_DEFAULT_ARCHS), $(EXPORT_DEFAULT_ARCHS), $(EXPORT_VALID_ARCHS))))
@@ -376,7 +387,7 @@ include /Users/danialross/Qt/6.5.2/macos/mkspecs/features/mac/sdk.mk
 first: all
 ####### Build rules
 
-CustomRide.app/Contents/MacOS/CustomRide: ui_mainwindow.h $(OBJECTS)  
+CustomRide.app/Contents/MacOS/CustomRide: ui_cartypewindow.h ui_mainwindow.h $(OBJECTS)  
 	@test -d CustomRide.app/Contents/MacOS/ || mkdir -p CustomRide.app/Contents/MacOS/
 	$(LINK) $(LFLAGS) -o $(TARGET)  $(OBJECTS) $(OBJCOMP) $(LIBS)
 
@@ -648,6 +659,7 @@ Makefile: ../CustomRide/CustomRide.pro ../../../../Qt/6.5.2/macos/mkspecs/macx-c
 		../../../../Qt/6.5.2/macos/mkspecs/features/qt_config.prf \
 		../../../../Qt/6.5.2/macos/mkspecs/macx-clang/qmake.conf \
 		../../../../Qt/6.5.2/macos/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../../Qt/6.5.2/macos/mkspecs/features/exclusive_builds.prf \
 		../../../../Qt/6.5.2/macos/mkspecs/features/mac/sdk.prf \
 		../../../../Qt/6.5.2/macos/mkspecs/features/toolchain.prf \
@@ -950,6 +962,7 @@ Makefile: ../CustomRide/CustomRide.pro ../../../../Qt/6.5.2/macos/mkspecs/macx-c
 ../../../../Qt/6.5.2/macos/mkspecs/features/qt_config.prf:
 ../../../../Qt/6.5.2/macos/mkspecs/macx-clang/qmake.conf:
 ../../../../Qt/6.5.2/macos/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../../Qt/6.5.2/macos/mkspecs/features/exclusive_builds.prf:
 ../../../../Qt/6.5.2/macos/mkspecs/features/mac/sdk.prf:
 ../../../../Qt/6.5.2/macos/mkspecs/features/toolchain.prf:
@@ -1007,9 +1020,9 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../CustomRide/mainwindow.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../CustomRide/main.cpp ../CustomRide/mainwindow.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../CustomRide/mainwindow.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../CustomRide/cartypewindow.h ../CustomRide/httprequest.h ../CustomRide/mainwindow.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../CustomRide/cartypewindow.cpp ../CustomRide/httprequest.cpp ../CustomRide/main.cpp ../CustomRide/mainwindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../CustomRide/cartypewindow.ui ../CustomRide/mainwindow.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -1019,6 +1032,7 @@ clean: compiler_clean
 
 distclean: clean 
 	-$(DEL_FILE) -r CustomRide.app
+	-$(DEL_FILE) .qmake.stash
 	-$(DEL_FILE) Makefile
 
 
@@ -1037,22 +1051,32 @@ benchmark: first
 
 compiler_rcc_make_all:
 compiler_rcc_clean:
-compiler_moc_header_make_all: moc_mainwindow.cpp
+compiler_moc_header_make_all: moc_cartypewindow.cpp moc_mainwindow.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp
+	-$(DEL_FILE) moc_cartypewindow.cpp moc_mainwindow.cpp
+moc_cartypewindow.cpp: ../CustomRide/cartypewindow.h \
+		../../../../Qt/6.5.2/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		../../../../Qt/6.5.2/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../../../../Qt/6.5.2/macos/libexec/moc
+	/Users/danialross/Qt/6.5.2/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=14 -D__clang_minor__=0 -D__clang_patchlevel__=3 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/danialross/Qt/6.5.2/macos/mkspecs/macx-clang -I/Users/danialross/Documents/GitHub/CustomRide/CustomRide -I/usr/bin/curl -I/Users/danialross/Qt/6.5.2/macos/lib/QtWidgets.framework/Headers -I/Users/danialross/Qt/6.5.2/macos/lib/QtGui.framework/Headers -I/Users/danialross/Qt/6.5.2/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/danialross/Qt/6.5.2/macos/lib ../CustomRide/cartypewindow.h -o moc_cartypewindow.cpp
+
 moc_mainwindow.cpp: ../CustomRide/mainwindow.h \
 		../../../../Qt/6.5.2/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../../Qt/6.5.2/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		../../../../Qt/6.5.2/macos/libexec/moc
-	/Users/danialross/Qt/6.5.2/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=14 -D__clang_minor__=0 -D__clang_patchlevel__=3 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/danialross/Qt/6.5.2/macos/mkspecs/macx-clang -I/Users/danialross/Documents/GitHub/CustomRide/CustomRide -I/Users/danialross/Qt/6.5.2/macos/lib/QtWidgets.framework/Headers -I/Users/danialross/Qt/6.5.2/macos/lib/QtGui.framework/Headers -I/Users/danialross/Qt/6.5.2/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/danialross/Qt/6.5.2/macos/lib ../CustomRide/mainwindow.h -o moc_mainwindow.cpp
+	/Users/danialross/Qt/6.5.2/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=14 -D__clang_minor__=0 -D__clang_patchlevel__=3 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/danialross/Qt/6.5.2/macos/mkspecs/macx-clang -I/Users/danialross/Documents/GitHub/CustomRide/CustomRide -I/usr/bin/curl -I/Users/danialross/Qt/6.5.2/macos/lib/QtWidgets.framework/Headers -I/Users/danialross/Qt/6.5.2/macos/lib/QtGui.framework/Headers -I/Users/danialross/Qt/6.5.2/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/danialross/Qt/6.5.2/macos/lib ../CustomRide/mainwindow.h -o moc_mainwindow.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_mainwindow.h
+compiler_uic_make_all: ui_cartypewindow.h ui_mainwindow.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_mainwindow.h
+	-$(DEL_FILE) ui_cartypewindow.h ui_mainwindow.h
+ui_cartypewindow.h: ../CustomRide/cartypewindow.ui \
+		../../../../Qt/6.5.2/macos/libexec/uic
+	/Users/danialross/Qt/6.5.2/macos/libexec/uic ../CustomRide/cartypewindow.ui -o ui_cartypewindow.h
+
 ui_mainwindow.h: ../CustomRide/mainwindow.ui \
 		../../../../Qt/6.5.2/macos/libexec/uic
 	/Users/danialross/Qt/6.5.2/macos/libexec/uic ../CustomRide/mainwindow.ui -o ui_mainwindow.h
@@ -1069,6 +1093,15 @@ compiler_clean: compiler_moc_header_clean compiler_uic_clean
 
 ####### Compile
 
+cartypewindow.o: ../CustomRide/cartypewindow.cpp ../CustomRide/cartypewindow.h \
+		../../../../Qt/6.5.2/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		../../../../Qt/6.5.2/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		ui_cartypewindow.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o cartypewindow.o ../CustomRide/cartypewindow.cpp
+
+httprequest.o: ../CustomRide/httprequest.cpp ../CustomRide/httprequest.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o httprequest.o ../CustomRide/httprequest.cpp
+
 main.o: ../CustomRide/main.cpp ../CustomRide/mainwindow.h \
 		../../../../Qt/6.5.2/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../../Qt/6.5.2/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
@@ -1079,8 +1112,12 @@ main.o: ../CustomRide/main.cpp ../CustomRide/mainwindow.h \
 mainwindow.o: ../CustomRide/mainwindow.cpp ../CustomRide/mainwindow.h \
 		../../../../Qt/6.5.2/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../../Qt/6.5.2/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		ui_mainwindow.h
+		ui_mainwindow.h \
+		../CustomRide/cartypewindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../CustomRide/mainwindow.cpp
+
+moc_cartypewindow.o: moc_cartypewindow.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_cartypewindow.o moc_cartypewindow.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp

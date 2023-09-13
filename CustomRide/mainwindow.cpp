@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "cartypewindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -48,6 +49,8 @@ void MainWindow::on_transButton_clicked()
 
 void MainWindow::on_typeButton_clicked()
 {
+    carTypeWindow *newWindow = new carTypeWindow(this);
+    newWindow->show();
 
 }
 
