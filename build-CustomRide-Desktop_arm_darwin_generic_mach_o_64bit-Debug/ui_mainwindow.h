@@ -1,13 +1,11 @@
+#pragma once
 /********************************************************************************
-** Form generated from reading UI file 'mainwindow.ui'
+** Form generated from reading UI file ''
 **
 ** Created by: Qt User Interface Compiler version 6.5.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
-
-#ifndef UI_MAINWINDOW_H
-#define UI_MAINWINDOW_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
@@ -25,12 +23,13 @@ class Ui_MainWindow
 public:
     QWidget *centralwidget;
     QLabel *label;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton_3;
-    QPushButton *pushButton_4;
-    QPushButton *pushButton_5;
-    QPushButton *pushButton_6;
+    QPushButton *typeButton;
+    QPushButton *displacementButton;
+    QPushButton *cylinderButton;
+    QPushButton *driveTrainButton;
+    QPushButton *modelButton;
+    QPushButton *transButton;
+    QLabel *imageViewer;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -38,30 +37,33 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(501, 322);
+        MainWindow->resize(501, 345);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         label = new QLabel(centralwidget);
         label->setObjectName("label");
         label->setGeometry(QRect(170, 30, 151, 16));
-        pushButton = new QPushButton(centralwidget);
-        pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(10, 70, 100, 61));
-        pushButton_2 = new QPushButton(centralwidget);
-        pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setGeometry(QRect(10, 140, 100, 61));
-        pushButton_3 = new QPushButton(centralwidget);
-        pushButton_3->setObjectName("pushButton_3");
-        pushButton_3->setGeometry(QRect(10, 210, 100, 61));
-        pushButton_4 = new QPushButton(centralwidget);
-        pushButton_4->setObjectName("pushButton_4");
-        pushButton_4->setGeometry(QRect(390, 140, 100, 61));
-        pushButton_5 = new QPushButton(centralwidget);
-        pushButton_5->setObjectName("pushButton_5");
-        pushButton_5->setGeometry(QRect(390, 210, 100, 61));
-        pushButton_6 = new QPushButton(centralwidget);
-        pushButton_6->setObjectName("pushButton_6");
-        pushButton_6->setGeometry(QRect(390, 70, 100, 61));
+        typeButton = new QPushButton(centralwidget);
+        typeButton->setObjectName("typeButton");
+        typeButton->setGeometry(QRect(10, 70, 100, 61));
+        displacementButton = new QPushButton(centralwidget);
+        displacementButton->setObjectName("displacementButton");
+        displacementButton->setGeometry(QRect(10, 140, 100, 61));
+        cylinderButton = new QPushButton(centralwidget);
+        cylinderButton->setObjectName("cylinderButton");
+        cylinderButton->setGeometry(QRect(10, 210, 100, 61));
+        driveTrainButton = new QPushButton(centralwidget);
+        driveTrainButton->setObjectName("driveTrainButton");
+        driveTrainButton->setGeometry(QRect(390, 140, 100, 61));
+        modelButton = new QPushButton(centralwidget);
+        modelButton->setObjectName("modelButton");
+        modelButton->setGeometry(QRect(390, 210, 100, 61));
+        transButton = new QPushButton(centralwidget);
+        transButton->setObjectName("pushButton_6");
+        transButton->setGeometry(QRect(390, 70, 100, 61));
+        imageViewer = new QLabel(centralwidget);
+        imageViewer->setObjectName("imageViewer");
+        imageViewer->setGeometry(QRect(120, 80, 261, 181));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -80,12 +82,13 @@ public:
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "Welcome To CustomRide", nullptr));
-        pushButton->setText(QCoreApplication::translate("MainWindow", "Type", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("MainWindow", "Displacement", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("MainWindow", "Cylinders", nullptr));
-        pushButton_4->setText(QCoreApplication::translate("MainWindow", "Drive Train", nullptr));
-        pushButton_5->setText(QCoreApplication::translate("MainWindow", "Model", nullptr));
-        pushButton_6->setText(QCoreApplication::translate("MainWindow", "Transmission", nullptr));
+        typeButton->setText(QCoreApplication::translate("MainWindow", "Type", nullptr));
+        displacementButton->setText(QCoreApplication::translate("MainWindow", "Displacement", nullptr));
+        cylinderButton->setText(QCoreApplication::translate("MainWindow", "Cylinders", nullptr));
+        driveTrainButton->setText(QCoreApplication::translate("MainWindow", "Drive Train", nullptr));
+        modelButton->setText(QCoreApplication::translate("MainWindow", "Model", nullptr));
+        transButton->setText(QCoreApplication::translate("MainWindow", "Transmission", nullptr));
+        imageViewer->setText(QCoreApplication::translate("MainWindow", "Q", nullptr));
     } // retranslateUi
 
 };
@@ -96,4 +99,3 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // UI_MAINWINDOW_H
