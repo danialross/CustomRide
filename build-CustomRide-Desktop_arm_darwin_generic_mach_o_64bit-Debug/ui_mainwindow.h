@@ -27,9 +27,10 @@ public:
     QPushButton *displacementButton;
     QPushButton *cylinderButton;
     QPushButton *driveTrainButton;
-    QPushButton *modelButton;
+    QPushButton *fuelButton;
     QPushButton *transButton;
     QLabel *imageViewer;
+    QPushButton *exitButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -37,7 +38,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(501, 345);
+        MainWindow->resize(501, 344);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         label = new QLabel(centralwidget);
@@ -55,15 +56,19 @@ public:
         driveTrainButton = new QPushButton(centralwidget);
         driveTrainButton->setObjectName("driveTrainButton");
         driveTrainButton->setGeometry(QRect(390, 140, 100, 61));
-        modelButton = new QPushButton(centralwidget);
-        modelButton->setObjectName("modelButton");
-        modelButton->setGeometry(QRect(390, 210, 100, 61));
+        fuelButton = new QPushButton(centralwidget);
+        fuelButton->setObjectName("modelButton");
+        fuelButton->setGeometry(QRect(390, 210, 100, 61));
         transButton = new QPushButton(centralwidget);
-        transButton->setObjectName("pushButton_6");
+        transButton->setObjectName("transButton");
         transButton->setGeometry(QRect(390, 70, 100, 61));
         imageViewer = new QLabel(centralwidget);
         imageViewer->setObjectName("imageViewer");
         imageViewer->setGeometry(QRect(120, 80, 261, 181));
+        imageViewer->setAlignment(Qt::AlignCenter);
+        exitButton = new QPushButton(centralwidget);
+        exitButton->setObjectName("exitButton");
+        exitButton->setGeometry(QRect(450, 10, 41, 32));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -86,9 +91,10 @@ public:
         displacementButton->setText(QCoreApplication::translate("MainWindow", "Displacement", nullptr));
         cylinderButton->setText(QCoreApplication::translate("MainWindow", "Cylinders", nullptr));
         driveTrainButton->setText(QCoreApplication::translate("MainWindow", "Drive Train", nullptr));
-        modelButton->setText(QCoreApplication::translate("MainWindow", "Model", nullptr));
+        fuelButton->setText(QCoreApplication::translate("MainWindow", "Fuel", nullptr));
         transButton->setText(QCoreApplication::translate("MainWindow", "Transmission", nullptr));
-        imageViewer->setText(QCoreApplication::translate("MainWindow", "Q", nullptr));
+        imageViewer->setText(QCoreApplication::translate("MainWindow", "No Type Selected", nullptr));
+        exitButton->setText(QCoreApplication::translate("MainWindow", "Exit", nullptr));
     } // retranslateUi
 
 };

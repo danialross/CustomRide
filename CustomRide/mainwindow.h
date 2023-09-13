@@ -15,6 +15,17 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+
+    void on_cylinderButton_clicked();
+    void on_displacementButton_clicked();
+    void on_driveTrainButton_clicked();
+    void on_exitButton_clicked();
+    void on_fuelButton_clicked();
+    void on_transButton_clicked();
+    void on_typeButton_clicked();
+
+
 private:
     Ui::MainWindow *ui;
 };

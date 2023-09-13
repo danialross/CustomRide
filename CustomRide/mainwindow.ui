@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>501</width>
-    <height>322</height>
+    <height>344</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -27,7 +27,7 @@
      <string>Welcome To CustomRide</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="typeButton">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -40,7 +40,7 @@
      <string>Type</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="displacementButton">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -53,7 +53,7 @@
      <string>Displacement</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="cylinderButton">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -66,7 +66,7 @@
      <string>Cylinders</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_4">
+   <widget class="QPushButton" name="driveTrainButton">
     <property name="geometry">
      <rect>
       <x>390</x>
@@ -79,7 +79,7 @@
      <string>Drive Train</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_5">
+   <widget class="QPushButton" name="modelButton">
     <property name="geometry">
      <rect>
       <x>390</x>
@@ -92,7 +92,7 @@
      <string>Model</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_6">
+   <widget class="QPushButton" name="transButton">
     <property name="geometry">
      <rect>
       <x>390</x>
@@ -103,6 +103,35 @@
     </property>
     <property name="text">
      <string>Transmission</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="imageViewer">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>80</y>
+      <width>261</width>
+      <height>181</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>No Type Selected</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="exitButton">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>10</y>
+      <width>41</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Exit</string>
     </property>
    </widget>
   </widget>
