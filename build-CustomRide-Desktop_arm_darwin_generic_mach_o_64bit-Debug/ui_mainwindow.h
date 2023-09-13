@@ -40,7 +40,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(501, 344);
+        MainWindow->resize(501, 321);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         label = new QLabel(centralwidget);

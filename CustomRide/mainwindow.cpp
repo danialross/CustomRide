@@ -34,7 +34,7 @@ void MainWindow::on_driveTrainButton_clicked()
 
 void MainWindow::on_exitButton_clicked()
 {
-
+    close();
 }
 
 void MainWindow::on_fuelButton_clicked()
