@@ -15,6 +15,9 @@ public:
     explicit carTypeWindow(QWidget *parent = nullptr);
     ~carTypeWindow();
 
+private slots:
+    void on_doneButton_clicked();
+
 private:
     Ui::carTypeWindow *ui;
 };

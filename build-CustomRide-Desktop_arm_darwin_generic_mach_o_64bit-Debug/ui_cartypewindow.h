@@ -25,7 +25,7 @@ class Ui_carTypeWindow
 {
 public:
     QWidget *centralwidget;
-    QPushButton *pushButton;
+    QPushButton *doneButton;
     QComboBox *comboBox;
     QLabel *label;
     QMenuBar *menubar;
@@ -38,9 +38,9 @@ public:
         carTypeWindow->resize(286, 234);
         centralwidget = new QWidget(carTypeWindow);
         centralwidget->setObjectName("centralwidget");
-        pushButton = new QPushButton(centralwidget);
-        pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(110, 140, 61, 32));
+        doneButton = new QPushButton(centralwidget);
+        doneButton->setObjectName("doneButton");
+        doneButton->setGeometry(QRect(110, 140, 61, 32));
         comboBox = new QComboBox(centralwidget);
         comboBox->addItem(QString());
         comboBox->addItem(QString());
@@ -50,7 +50,7 @@ public:
         comboBox->addItem(QString());
         comboBox->addItem(QString());
         comboBox->setObjectName("comboBox");
-        comboBox->setGeometry(QRect(90, 80, 103, 32));
+        comboBox->setGeometry(QRect(70, 80, 151, 32));
         label = new QLabel(centralwidget);
         label->setObjectName("label");
         label->setGeometry(QRect(90, 30, 111, 16));
@@ -71,7 +71,7 @@ public:
     void retranslateUi(QMainWindow *carTypeWindow)
     {
         carTypeWindow->setWindowTitle(QCoreApplication::translate("carTypeWindow", "MainWindow", nullptr));
-        pushButton->setText(QCoreApplication::translate("carTypeWindow", "Done", nullptr));
+        doneButton->setText(QCoreApplication::translate("carTypeWindow", "Done", nullptr));
         comboBox->setItemText(0, QString());
         comboBox->setItemText(1, QCoreApplication::translate("carTypeWindow", "Sedan", nullptr));
         comboBox->setItemText(2, QCoreApplication::translate("carTypeWindow", "Hatchback", nullptr));
