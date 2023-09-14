@@ -8,7 +8,6 @@ carTypeWindow::carTypeWindow(MainWindow *mainWindow,QWidget *parent) :
 {
     this->mainWindow = mainWindow;
     this->mainWindow->setEnabled(false);
-    setEnabled(true);
     ui->setupUi(this);
 
 }
@@ -20,7 +19,6 @@ carTypeWindow::~carTypeWindow()
 
 void carTypeWindow::on_doneButton_clicked()
 {
-
     this->mainWindow->setEnabled(true);
     close();
 }
@@ -29,7 +27,9 @@ void carTypeWindow::on_doneButton_clicked()
 void carTypeWindow::on_comboBox_currentIndexChanged(int index)
 {
 
-
+    if(mainWindow){
+        mainWindow->setImageLabel(ui->comboBox->currentText());
+    }
 
 }
 

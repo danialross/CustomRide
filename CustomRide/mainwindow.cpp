@@ -15,6 +15,15 @@ MainWindow::~MainWindow()
 }
 
 
+void MainWindow::setImageLabel(QString str){
+    QString path = "/Users/danialross/Documents/GitHub/CustomRide/CustomRide/carTypes/";
+    QPixmap pixmap = QPixmap(path+str+".png");
+    pixmap = pixmap.scaled(ui->imageViewer->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    ui->imageViewer->setPixmap(pixmap); // Set the image path
+    ui->imageViewer->show();
+}
+
+
 
 
 void MainWindow::on_cylinderButton_clicked()
@@ -54,9 +63,5 @@ void MainWindow::on_typeButton_clicked()
 
 }
 
-void MainWindow::setPixmap(QPixmap *newPixmap)
-{
-    pixmap = newPixmap;
-}
 
 

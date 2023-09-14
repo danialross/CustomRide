@@ -16,6 +16,10 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void setImageLabel(QString str);
+
+
+
 
 private slots:
 
