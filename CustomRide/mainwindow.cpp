@@ -3,8 +3,9 @@
 #include "cartypewindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+    : QMainWindow(parent),
+    ui(new Ui::MainWindow),
+    car()
 {
     ui->setupUi(this);
 }

@@ -1,8 +1,17 @@
 #include "car.h"
 
-car::car()
-{
+car::car(){}
 
+bool car::isComplete(){
+
+    if(type.empty()) return false;
+    if(displacement == 0) return false;
+    if(cylinders == 0) return false;
+    if(transmisson.empty()) return false;
+    if(driveTrain.empty()) return false;
+    if(fuel.empty()) return false;
+
+    return true;
 }
 
 void car::setType(const string &newType)

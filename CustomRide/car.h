@@ -9,6 +9,7 @@ class car
 {
 public:
     car();
+    bool isComplete();
 
     void setType(const string &newType);
 

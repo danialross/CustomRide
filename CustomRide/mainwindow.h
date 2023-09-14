@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <car.h>
 
 using namespace std;
 
@@ -34,6 +35,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    car *car;
 
 };
 #endif // MAINWINDOW_H
