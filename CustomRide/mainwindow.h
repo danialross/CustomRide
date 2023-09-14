@@ -17,8 +17,6 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    void setPixmap(QPixmap *newPixmap);
-
 private slots:
 
     void on_cylinderButton_clicked();
@@ -32,7 +30,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    QPixmap *pixmap;
 
 };
 #endif // MAINWINDOW_H
