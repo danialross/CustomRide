@@ -12,12 +12,14 @@ INCLUDEPATH += /usr/bin/curl
 LIBS += -lcurl
 
 SOURCES += \
+    car.cpp \
     cartypewindow.cpp \
     httprequest.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    car.h \
     cartypewindow.h \
     httprequest.h \
     mainwindow.h

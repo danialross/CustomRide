@@ -52,12 +52,14 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../CustomRide/cartypewindow.cpp \
+SOURCES       = ../CustomRide/car.cpp \
+		../CustomRide/cartypewindow.cpp \
 		../CustomRide/httprequest.cpp \
 		../CustomRide/main.cpp \
 		../CustomRide/mainwindow.cpp moc_cartypewindow.cpp \
 		moc_mainwindow.cpp
-OBJECTS       = cartypewindow.o \
+OBJECTS       = car.o \
+		cartypewindow.o \
 		httprequest.o \
 		main.o \
 		mainwindow.o \
@@ -361,9 +363,11 @@ DIST          = ../../../../Qt/6.5.2/macos/mkspecs/features/spec_pre.prf \
 		../../../../Qt/6.5.2/macos/mkspecs/features/exceptions.prf \
 		../../../../Qt/6.5.2/macos/mkspecs/features/yacc.prf \
 		../../../../Qt/6.5.2/macos/mkspecs/features/lex.prf \
-		../CustomRide/CustomRide.pro ../CustomRide/cartypewindow.h \
+		../CustomRide/CustomRide.pro ../CustomRide/car.h \
+		../CustomRide/cartypewindow.h \
 		../CustomRide/httprequest.h \
-		../CustomRide/mainwindow.h ../CustomRide/cartypewindow.cpp \
+		../CustomRide/mainwindow.h ../CustomRide/car.cpp \
+		../CustomRide/cartypewindow.cpp \
 		../CustomRide/httprequest.cpp \
 		../CustomRide/main.cpp \
 		../CustomRide/mainwindow.cpp
@@ -1020,8 +1024,8 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../CustomRide/cartypewindow.h ../CustomRide/httprequest.h ../CustomRide/mainwindow.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../CustomRide/cartypewindow.cpp ../CustomRide/httprequest.cpp ../CustomRide/main.cpp ../CustomRide/mainwindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../CustomRide/car.h ../CustomRide/cartypewindow.h ../CustomRide/httprequest.h ../CustomRide/mainwindow.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../CustomRide/car.cpp ../CustomRide/cartypewindow.cpp ../CustomRide/httprequest.cpp ../CustomRide/main.cpp ../CustomRide/mainwindow.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../CustomRide/cartypewindow.ui ../CustomRide/mainwindow.ui $(DISTDIR)/
 
 
@@ -1057,6 +1061,7 @@ compiler_moc_header_clean:
 moc_cartypewindow.cpp: ../CustomRide/cartypewindow.h \
 		../../../../Qt/6.5.2/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../../Qt/6.5.2/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../CustomRide/mainwindow.h \
 		../../../../Qt/6.5.2/macos/libexec/moc
 	/Users/danialross/Qt/6.5.2/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=14 -D__clang_minor__=0 -D__clang_patchlevel__=3 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/danialross/Qt/6.5.2/macos/mkspecs/macx-clang -I/Users/danialross/Documents/GitHub/CustomRide/CustomRide -I/usr/bin/curl -I/Users/danialross/Qt/6.5.2/macos/lib/QtWidgets.framework/Headers -I/Users/danialross/Qt/6.5.2/macos/lib/QtGui.framework/Headers -I/Users/danialross/Qt/6.5.2/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/danialross/Qt/6.5.2/macos/lib ../CustomRide/cartypewindow.h -o moc_cartypewindow.cpp
 
@@ -1093,10 +1098,15 @@ compiler_clean: compiler_moc_header_clean compiler_uic_clean
 
 ####### Compile
 
+car.o: ../CustomRide/car.cpp ../CustomRide/car.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o car.o ../CustomRide/car.cpp
+
 cartypewindow.o: ../CustomRide/cartypewindow.cpp ../CustomRide/cartypewindow.h \
 		../../../../Qt/6.5.2/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../../Qt/6.5.2/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		ui_cartypewindow.h
+		../CustomRide/mainwindow.h \
+		ui_cartypewindow.h \
+		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o cartypewindow.o ../CustomRide/cartypewindow.cpp
 
 httprequest.o: ../CustomRide/httprequest.cpp ../CustomRide/httprequest.h
