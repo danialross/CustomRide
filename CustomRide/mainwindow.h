@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 
+using namespace std;
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -14,6 +16,8 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
+    void setPixmap(QPixmap *newPixmap);
 
 private slots:
 
@@ -28,5 +32,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    QPixmap *pixmap;
+
 };
 #endif // MAINWINDOW_H

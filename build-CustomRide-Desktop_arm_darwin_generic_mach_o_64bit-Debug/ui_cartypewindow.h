@@ -49,6 +49,7 @@ public:
         comboBox->addItem(QString());
         comboBox->addItem(QString());
         comboBox->addItem(QString());
+        comboBox->addItem(QString());
         comboBox->setObjectName("comboBox");
         comboBox->setGeometry(QRect(70, 80, 151, 32));
         label = new QLabel(centralwidget);
@@ -74,11 +75,12 @@ public:
         doneButton->setText(QCoreApplication::translate("carTypeWindow", "Done", nullptr));
         comboBox->setItemText(0, QString());
         comboBox->setItemText(1, QCoreApplication::translate("carTypeWindow", "Sedan", nullptr));
-        comboBox->setItemText(2, QCoreApplication::translate("carTypeWindow", "Hatchback", nullptr));
-        comboBox->setItemText(3, QCoreApplication::translate("carTypeWindow", "SUV", nullptr));
-        comboBox->setItemText(4, QCoreApplication::translate("carTypeWindow", "Van", nullptr));
-        comboBox->setItemText(5, QCoreApplication::translate("carTypeWindow", "Station Wagon", nullptr));
-        comboBox->setItemText(6, QCoreApplication::translate("carTypeWindow", "Truck", nullptr));
+        comboBox->setItemText(2, QCoreApplication::translate("carTypeWindow", "Coupe", nullptr));
+        comboBox->setItemText(3, QCoreApplication::translate("carTypeWindow", "Hatchback", nullptr));
+        comboBox->setItemText(4, QCoreApplication::translate("carTypeWindow", "SUV", nullptr));
+        comboBox->setItemText(5, QCoreApplication::translate("carTypeWindow", "Van", nullptr));
+        comboBox->setItemText(6, QCoreApplication::translate("carTypeWindow", "Station Wagon", nullptr));
+        comboBox->setItemText(7, QCoreApplication::translate("carTypeWindow", "Truck", nullptr));
 
         label->setText(QCoreApplication::translate("carTypeWindow", "Select a car type :", nullptr));
     } // retranslateUi

@@ -48,6 +48,11 @@
     </item>
     <item>
      <property name="text">
+      <string>Coupe</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
       <string>Hatchback</string>
      </property>
     </item>

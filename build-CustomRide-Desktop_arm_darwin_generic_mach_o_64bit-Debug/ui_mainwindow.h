@@ -70,7 +70,7 @@ public:
         imageViewer->setAlignment(Qt::AlignCenter);
         exitButton = new QPushButton(centralwidget);
         exitButton->setObjectName("exitButton");
-        exitButton->setGeometry(QRect(450, 10, 41, 32));
+        exitButton->setGeometry(QRect(451, 10, 41, 32));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");

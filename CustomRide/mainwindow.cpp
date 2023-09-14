@@ -54,4 +54,9 @@ void MainWindow::on_typeButton_clicked()
 
 }
 
+void MainWindow::setPixmap(QPixmap *newPixmap)
+{
+    pixmap = newPixmap;
+}
+
 

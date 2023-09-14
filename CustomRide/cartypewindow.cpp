@@ -1,11 +1,13 @@
 #include "cartypewindow.h"
 #include "ui_cartypewindow.h"
+#include "ui_mainwindow.h"
 
-carTypeWindow::carTypeWindow(QWidget *parent) :
+carTypeWindow::carTypeWindow(MainWindow *mainWindow,QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::carTypeWindow)
 {
-    parent->setEnabled(false);
+    this->mainWindow = mainWindow;
+    this->mainWindow->setEnabled(false);
     setEnabled(true);
     ui->setupUi(this);
 
@@ -19,8 +21,15 @@ carTypeWindow::~carTypeWindow()
 void carTypeWindow::on_doneButton_clicked()
 {
 
-    QWidget *parentWidget = this->parentWidget();
-    parentWidget->setEnabled(true);
+    this->mainWindow->setEnabled(true);
     close();
+}
+
+
+void carTypeWindow::on_comboBox_currentIndexChanged(int index)
+{
+
+
+
 }
 
