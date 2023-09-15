@@ -18,6 +18,14 @@ MainWindow::~MainWindow()
 
 
 void MainWindow::setImageLabel(QString str){
+
+    if(str == ""){
+        ui->imageViewer->setText("No Type Selected");
+        ui->imageViewer->setAlignment(Qt::AlignCenter);
+        return;
+    }
+
+
     QString path = "/Users/danialross/Documents/GitHub/CustomRide/CustomRide/carTypes/";
     QPixmap pixmap = QPixmap(path+str+".png");
     pixmap = pixmap.scaled(ui->imageViewer->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation);
