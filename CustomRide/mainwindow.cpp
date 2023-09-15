@@ -5,7 +5,7 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
     ui(new Ui::MainWindow),
-    car()
+    car(new Car())
 {
     ui->setupUi(this);
 }
@@ -13,6 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+    delete car;
 }
 
 
@@ -64,5 +65,13 @@ void MainWindow::on_typeButton_clicked()
 
 }
 
+void MainWindow::on_finishButton_clicked()
+{
 
+}
+
+Car *MainWindow::getCar() const
+{
+    return car;
+}
 

@@ -1,8 +1,8 @@
 #include "car.h"
 
-car::car(){}
+Car::Car(){}
 
-bool car::isComplete(){
+bool Car::isComplete(){
 
     if(type.empty()) return false;
     if(displacement == 0) return false;
@@ -14,62 +14,62 @@ bool car::isComplete(){
     return true;
 }
 
-void car::setType(const string &newType)
+void Car::setType(const string &newType)
 {
     type = newType;
 }
 
-string car::getType() const
+string Car::getType() const
 {
     return type;
 }
 
-double car::getDisplacement() const
+double Car::getDisplacement() const
 {
     return displacement;
 }
 
-void car::setDisplacement(double newDisplacement)
+void Car::setDisplacement(double newDisplacement)
 {
     displacement = newDisplacement;
 }
 
-int car::getCylinders() const
+int Car::getCylinders() const
 {
     return cylinders;
 }
 
-void car::setCylinders(int newCylinders)
+void Car::setCylinders(int newCylinders)
 {
     cylinders = newCylinders;
 }
 
-string car::getTransmisson() const
+string Car::getTransmisson() const
 {
     return transmisson;
 }
 
-void car::setTransmisson(const string &newTransmisson)
+void Car::setTransmisson(const string &newTransmisson)
 {
     transmisson = newTransmisson;
 }
 
-string car::getDriveTrain() const
+string Car::getDriveTrain() const
 {
     return driveTrain;
 }
 
-void car::setDriveTrain(const string &newDriveTrain)
+void Car::setDriveTrain(const string &newDriveTrain)
 {
     driveTrain = newDriveTrain;
 }
 
-string car::getFuel() const
+string Car::getFuel() const
 {
     return fuel;
 }
 
-void car::setFuel(const string &newFuel)
+void Car::setFuel(const string &newFuel)
 {
     fuel = newFuel;
 }

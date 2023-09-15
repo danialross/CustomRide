@@ -33,6 +33,7 @@ public:
     QPushButton *transButton;
     QLabel *imageViewer;
     QPushButton *exitButton;
+    QPushButton *finishButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -40,7 +41,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(501, 321);
+        MainWindow->resize(501, 362);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         label = new QLabel(centralwidget);
@@ -71,6 +72,9 @@ public:
         exitButton = new QPushButton(centralwidget);
         exitButton->setObjectName("exitButton");
         exitButton->setGeometry(QRect(451, 10, 41, 32));
+        finishButton = new QPushButton(centralwidget);
+        finishButton->setObjectName("finishButton");
+        finishButton->setGeometry(QRect(210, 290, 71, 31));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -97,6 +101,7 @@ public:
         transButton->setText(QCoreApplication::translate("MainWindow", "Transmission", nullptr));
         imageViewer->setText(QCoreApplication::translate("MainWindow", "No Type Selected", nullptr));
         exitButton->setText(QCoreApplication::translate("MainWindow", "Exit", nullptr));
+        finishButton->setText(QCoreApplication::translate("MainWindow", "Finish", nullptr));
     } // retranslateUi
 
 };

@@ -5,10 +5,11 @@
 
 using namespace std;
 
-class car
+class Car
 {
 public:
-    car();
+    Car();
+
     bool isComplete();
 
     void setType(const string &newType);
