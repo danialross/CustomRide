@@ -42,16 +42,22 @@ static constexpr auto qt_meta_stringdata_CLASScarTypeWindowENDCLASS = QtMocHelpe
     "on_doneButton_clicked",
     "",
     "on_comboBox_currentIndexChanged",
-    "index"
+    "index",
+    "setComboboxIndex",
+    "string",
+    "type"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASScarTypeWindowENDCLASS_t {
-    uint offsetsAndSizes[10];
+    uint offsetsAndSizes[16];
     char stringdata0[14];
     char stringdata1[22];
     char stringdata2[1];
     char stringdata3[32];
     char stringdata4[6];
+    char stringdata5[17];
+    char stringdata6[7];
+    char stringdata7[5];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASScarTypeWindowENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -61,13 +67,19 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASScarTypeWindowENDCLASS_t qt_meta
         QT_MOC_LITERAL(14, 21),  // "on_doneButton_clicked"
         QT_MOC_LITERAL(36, 0),  // ""
         QT_MOC_LITERAL(37, 31),  // "on_comboBox_currentIndexChanged"
-        QT_MOC_LITERAL(69, 5)   // "index"
+        QT_MOC_LITERAL(69, 5),  // "index"
+        QT_MOC_LITERAL(75, 16),  // "setComboboxIndex"
+        QT_MOC_LITERAL(92, 6),  // "string"
+        QT_MOC_LITERAL(99, 4)   // "type"
     },
     "carTypeWindow",
     "on_doneButton_clicked",
     "",
     "on_comboBox_currentIndexChanged",
-    "index"
+    "index",
+    "setComboboxIndex",
+    "string",
+    "type"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -79,7 +91,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASScarTypeWindowENDCLASS[] = {
       11,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       3,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -87,12 +99,14 @@ Q_CONSTINIT static const uint qt_meta_data_CLASScarTypeWindowENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   26,    2, 0x08,    1 /* Private */,
-       3,    1,   27,    2, 0x08,    2 /* Private */,
+       1,    0,   32,    2, 0x08,    1 /* Private */,
+       3,    1,   33,    2, 0x08,    2 /* Private */,
+       5,    1,   36,    2, 0x08,    4 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int,    4,
+    QMetaType::Int, 0x80000000 | 6,    7,
 
        0        // eod
 };
@@ -110,7 +124,10 @@ Q_CONSTINIT const QMetaObject carTypeWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_comboBox_currentIndexChanged'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<int, std::false_type>
+        QtPrivate::TypeAndForceComplete<int, std::false_type>,
+        // method 'setComboboxIndex'
+        QtPrivate::TypeAndForceComplete<int, std::false_type>,
+        QtPrivate::TypeAndForceComplete<string, std::false_type>
     >,
     nullptr
 } };
@@ -123,6 +140,8 @@ void carTypeWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         switch (_id) {
         case 0: _t->on_doneButton_clicked(); break;
         case 1: _t->on_comboBox_currentIndexChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 2: { int _r = _t->setComboboxIndex((*reinterpret_cast< std::add_pointer_t<string>>(_a[1])));
+            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = std::move(_r); }  break;
         default: ;
         }
     }
@@ -147,13 +166,13 @@ int carTypeWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 3)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 3;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 3)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 2;
+        _id -= 3;
     }
     return _id;
 }

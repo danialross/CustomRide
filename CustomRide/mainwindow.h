@@ -19,8 +19,7 @@ public:
     ~MainWindow();
     void setImageLabel(QString str);
 
-
-
+    Car *getCar() const;
 
 private slots:
 
@@ -31,11 +30,11 @@ private slots:
     void on_fuelButton_clicked();
     void on_transButton_clicked();
     void on_typeButton_clicked();
-
+    void on_finishButton_clicked();
 
 private:
     Ui::MainWindow *ui;
-    car *car;
+    Car *car;
 
 };
 #endif // MAINWINDOW_H

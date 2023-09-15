@@ -1,6 +1,9 @@
 #include "car.h"
 
-Car::Car(){}
+Car::Car(){
+    displacement = 0.0;
+    cylinders = 0;
+}
 
 bool Car::isComplete(){
 
