@@ -68,6 +68,9 @@ void MainWindow::on_transButton_clicked()
 
 void MainWindow::on_typeButton_clicked()
 {
+
+
+    setEnabled(false);
     carTypeWindow *newWindow = new carTypeWindow(this);
     newWindow->show();
 

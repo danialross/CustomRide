@@ -6,7 +6,6 @@ carTypeWindow::carTypeWindow(MainWindow *mainWindow,QWidget *parent) :
     ui(new Ui::carTypeWindow)
 {
     this->mainWindow = mainWindow;
-    mainWindow->setEnabled(false);
     ui->setupUi(this);
 
     string type = mainWindow->getCar()->getType();
