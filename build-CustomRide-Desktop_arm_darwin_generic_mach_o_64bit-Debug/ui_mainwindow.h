@@ -15,7 +15,6 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -24,7 +23,7 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QLabel *label;
+    QLabel *welcomeLabel;
     QPushButton *typeButton;
     QPushButton *displacementButton;
     QPushButton *cylinderButton;
@@ -35,54 +34,52 @@ public:
     QPushButton *exitButton;
     QPushButton *finishButton;
     QMenuBar *menubar;
-    QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
         MainWindow->resize(501, 362);
+        MainWindow->setMinimumSize(QSize(501, 362));
+        MainWindow->setMaximumSize(QSize(501, 362));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        label = new QLabel(centralwidget);
-        label->setObjectName("label");
-        label->setGeometry(QRect(170, 20, 151, 16));
+        welcomeLabel = new QLabel(centralwidget);
+        welcomeLabel->setObjectName("welcomeLabel");
+        welcomeLabel->setGeometry(QRect(205, 10, 91, 61));
         typeButton = new QPushButton(centralwidget);
         typeButton->setObjectName("typeButton");
-        typeButton->setGeometry(QRect(10, 70, 100, 61));
+        typeButton->setGeometry(QRect(10, 80, 100, 71));
         displacementButton = new QPushButton(centralwidget);
         displacementButton->setObjectName("displacementButton");
-        displacementButton->setGeometry(QRect(10, 140, 100, 61));
+        displacementButton->setGeometry(QRect(10, 150, 100, 71));
         cylinderButton = new QPushButton(centralwidget);
         cylinderButton->setObjectName("cylinderButton");
-        cylinderButton->setGeometry(QRect(10, 210, 100, 61));
+        cylinderButton->setGeometry(QRect(10, 220, 100, 71));
         driveTrainButton = new QPushButton(centralwidget);
         driveTrainButton->setObjectName("driveTrainButton");
-        driveTrainButton->setGeometry(QRect(390, 140, 100, 61));
+        driveTrainButton->setGeometry(QRect(390, 150, 100, 71));
         fuelButton = new QPushButton(centralwidget);
         fuelButton->setObjectName("fuelButton");
-        fuelButton->setGeometry(QRect(390, 210, 100, 61));
+        fuelButton->setGeometry(QRect(390, 220, 100, 71));
         transButton = new QPushButton(centralwidget);
         transButton->setObjectName("transButton");
-        transButton->setGeometry(QRect(390, 70, 100, 61));
+        transButton->setGeometry(QRect(390, 80, 100, 71));
         imageViewer = new QLabel(centralwidget);
         imageViewer->setObjectName("imageViewer");
-        imageViewer->setGeometry(QRect(120, 80, 261, 181));
+        imageViewer->setGeometry(QRect(120, 90, 261, 191));
         imageViewer->setAlignment(Qt::AlignCenter);
         exitButton = new QPushButton(centralwidget);
         exitButton->setObjectName("exitButton");
-        exitButton->setGeometry(QRect(451, 10, 41, 32));
+        exitButton->setGeometry(QRect(450, 10, 41, 41));
         finishButton = new QPushButton(centralwidget);
         finishButton->setObjectName("finishButton");
-        finishButton->setGeometry(QRect(210, 290, 71, 31));
+        finishButton->setGeometry(QRect(210, 300, 81, 31));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
         menubar->setGeometry(QRect(0, 0, 501, 24));
         MainWindow->setMenuBar(menubar);
-        statusbar = new QStatusBar(MainWindow);
-        statusbar->setObjectName("statusbar");
-        MainWindow->setStatusBar(statusbar);
 
         retranslateUi(MainWindow);
 
@@ -92,7 +89,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        label->setText(QCoreApplication::translate("MainWindow", "Welcome To CustomRide", nullptr));
+        welcomeLabel->setText(QString());
         typeButton->setText(QCoreApplication::translate("MainWindow", "Type", nullptr));
         displacementButton->setText(QCoreApplication::translate("MainWindow", "Displacement", nullptr));
         cylinderButton->setText(QCoreApplication::translate("MainWindow", "Cylinders", nullptr));

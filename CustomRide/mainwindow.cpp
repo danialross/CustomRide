@@ -8,6 +8,12 @@ MainWindow::MainWindow(QWidget *parent)
     car(new Car())
 {
     ui->setupUi(this);
+
+    QString path = "/Users/danialross/Documents/GitHub/CustomRide/CustomRide/logo.png";
+    QPixmap pixmap = QPixmap(path);
+    pixmap = pixmap.scaled(ui->welcomeLabel->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    ui->welcomeLabel->setPixmap(pixmap); // Set the image path
+    ui->welcomeLabel->show();
 }
 
 MainWindow::~MainWindow()
