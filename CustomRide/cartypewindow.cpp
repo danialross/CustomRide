@@ -9,7 +9,7 @@ carTypeWindow::carTypeWindow(MainWindow *mainWindow,QWidget *parent) :
     ui->setupUi(this);
 
     string type = mainWindow->getCar()->getType();
-    int index = setComboboxIndex(type);
+    int index = comboIndex;
     ui->comboBox->setCurrentIndex(index);
 
 }
@@ -33,37 +33,9 @@ void carTypeWindow::on_comboBox_currentIndexChanged(int index)
         QString type = ui->comboBox->currentText();
         mainWindow->setImageLabel(type);
         mainWindow->getCar()->setType(type.toStdString());
-
+        comboIndex = index;
     }
 
 }
 
-int carTypeWindow::setComboboxIndex(string type)
-{
-    if(type == ""){
-        return 0;
-
-    }else if(type == "Sedan"){
-        return 1;
-
-    }else if(type == "Coupe"){
-        return 2;
-
-    }else if(type == "Hatchback"){
-        return 3;
-
-    }else if(type == "SUV"){
-        return 4;
-
-    }else if(type == "Van"){
-        return 5;
-
-    }else if(type == "Station Wagon"){
-        return 6;
-
-    }else if(type == "Truck"){
-        return 7;
-
-    }
-}
 

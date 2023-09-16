@@ -19,11 +19,11 @@ public:
 private slots:
     void on_doneButton_clicked();
     void on_comboBox_currentIndexChanged(int index);
-    int setComboboxIndex(string type);
 
 private:
     Ui::carTypeWindow *ui;
     MainWindow *mainWindow;
+    int comboIndex;
 };
 
 #endif // CARTYPEWINDOW_H
