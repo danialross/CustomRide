@@ -1,26 +1,26 @@
 Audi A4
-BMW 3 Series
+Audi A5
 Chevrolet Equinox
 Chevrolet Silverado
 Dodge Charger
 Ford Escape
 Ford F-150
 Ford Focus
+Ford Fiesta
 GMC Sierra
 Honda Accord
 Honda Civic
 Honda CR-V
 Hyundai Elantra
-Hyundai Santa Fe
-Jeep Grand Cherokee
 Jeep Wrangler
 Kia Optima
 Mazda CX-5
-Mercedes-Benz C-Class
+Mitsubishi Outlander
 Nissan Altima
 Nissan Rogue
 Ram 1500
 Subaru Forester
+Subaru BRZ
 Subaru Outback
 Toyota Camry
 Toyota Corolla

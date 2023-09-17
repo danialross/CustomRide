@@ -12,15 +12,14 @@ public:
 
     bool isComplete();
 
-    void setType(const string &newType);
+    string getModelMake() const;
+    void setModelMake(const string &newModelMake);
 
-    string getType() const;
+    string getEngine() const;
+    void setEngine(const string &newEngine);
 
-    double getDisplacement() const;
-    void setDisplacement(double newDisplacement);
-
-    int getCylinders() const;
-    void setCylinders(int newCylinders);
+    string getEPlacement() const;
+    void setEPlacement(const string &newEPlacement);
 
     string getTransmisson() const;
     void setTransmisson(const string &newTransmisson);
@@ -31,10 +30,13 @@ public:
     string getFuel() const;
     void setFuel(const string &newFuel);
 
+
+
+
 private:
-    string type;
-    double displacement;
-    int cylinders;
+    string modelMake;
+    string engine;
+    string ePlacement;
     string transmisson;
     string driveTrain;
     string fuel;

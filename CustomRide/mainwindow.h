@@ -23,13 +23,13 @@ public:
 
 private slots:
 
-    void on_cylinderButton_clicked();
-    void on_displacementButton_clicked();
+    void on_modelMakeButton_clicked();
+    void on_engineButton_clicked();
+    void on_ePlacementButton_clicked();
     void on_driveTrainButton_clicked();
     void on_exitButton_clicked();
     void on_fuelButton_clicked();
     void on_transButton_clicked();
-    void on_typeButton_clicked();
     void on_finishButton_clicked();
 
 private:

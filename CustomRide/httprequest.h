@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <curl/curl.h>
+#include <QLabel>
 
 using namespace std;
 
@@ -12,13 +13,13 @@ public:
     httpRequest();
     ~httpRequest();
     static size_t WriteCallback(void *contents, size_t size, size_t nmemb, std::string *output);
-    string getModel(string make);
+    string getImageURL(string modelMake);
+    void setImageURL(QString url,QLabel *label);
 
 private:
     string response;
     CURL *curl;
-    CURLcode res;
-    struct curl_slist *headers;
+
 
 };
 

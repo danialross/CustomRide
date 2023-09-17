@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "boxwindow.h"
+#include "httprequest.h"
+#include "nlohmann/json.hpp"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
@@ -31,23 +33,26 @@ void MainWindow::setImageLabel(QString str){
         return;
     }
 
+    str = str.replace(" ", "_");
 
-    QString path = "/Users/danialross/Documents/GitHub/CustomRide/CustomRide/carTypes/";
-    QPixmap pixmap = QPixmap(path+str+".png");
-    pixmap = pixmap.scaled(ui->imageViewer->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation);
-    ui->imageViewer->setPixmap(pixmap); // Set the image path
-    ui->imageViewer->show();
+    httpRequest *requester = new httpRequest();
+    string modelMake = str.toStdString();
+    string response = requester->getImageURL(modelMake);
+    nlohmann::json json = nlohmann::json::parse(response);
+
+    QString url = QString::fromStdString(json["ymmts_img_list"][0]);
+
+    requester->setImageURL(url,ui->imageViewer);
+    delete requester;
 }
 
 
-
-
-void MainWindow::on_cylinderButton_clicked()
+void MainWindow::on_engineButton_clicked()
 {
 
 }
 
-void MainWindow::on_displacementButton_clicked()
+void MainWindow::on_ePlacementButton_clicked()
 {
 
 }
@@ -72,7 +77,7 @@ void MainWindow::on_transButton_clicked()
 
 }
 
-void MainWindow::on_typeButton_clicked()
+void MainWindow::on_modelMakeButton_clicked()
 {
 
     setEnabled(false);
@@ -90,4 +95,9 @@ Car *MainWindow::getCar() const
 {
     return car;
 }
+
+
+
+
+
 

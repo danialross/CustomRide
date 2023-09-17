@@ -39,28 +39,28 @@ namespace {
 struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {};
 static constexpr auto qt_meta_stringdata_CLASSMainWindowENDCLASS = QtMocHelpers::stringData(
     "MainWindow",
-    "on_cylinderButton_clicked",
+    "on_modelMakeButton_clicked",
     "",
-    "on_displacementButton_clicked",
+    "on_engineButton_clicked",
+    "on_ePlacementButton_clicked",
     "on_driveTrainButton_clicked",
     "on_exitButton_clicked",
     "on_fuelButton_clicked",
     "on_transButton_clicked",
-    "on_typeButton_clicked",
     "on_finishButton_clicked"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {
     uint offsetsAndSizes[20];
     char stringdata0[11];
-    char stringdata1[26];
+    char stringdata1[27];
     char stringdata2[1];
-    char stringdata3[30];
+    char stringdata3[24];
     char stringdata4[28];
-    char stringdata5[22];
+    char stringdata5[28];
     char stringdata6[22];
-    char stringdata7[23];
-    char stringdata8[22];
+    char stringdata7[22];
+    char stringdata8[23];
     char stringdata9[24];
 };
 #define QT_MOC_LITERAL(ofs, len) \
@@ -68,25 +68,25 @@ struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {
 Q_CONSTINIT static const qt_meta_stringdata_CLASSMainWindowENDCLASS_t qt_meta_stringdata_CLASSMainWindowENDCLASS = {
     {
         QT_MOC_LITERAL(0, 10),  // "MainWindow"
-        QT_MOC_LITERAL(11, 25),  // "on_cylinderButton_clicked"
-        QT_MOC_LITERAL(37, 0),  // ""
-        QT_MOC_LITERAL(38, 29),  // "on_displacementButton_clicked"
-        QT_MOC_LITERAL(68, 27),  // "on_driveTrainButton_clicked"
-        QT_MOC_LITERAL(96, 21),  // "on_exitButton_clicked"
-        QT_MOC_LITERAL(118, 21),  // "on_fuelButton_clicked"
-        QT_MOC_LITERAL(140, 22),  // "on_transButton_clicked"
-        QT_MOC_LITERAL(163, 21),  // "on_typeButton_clicked"
-        QT_MOC_LITERAL(185, 23)   // "on_finishButton_clicked"
+        QT_MOC_LITERAL(11, 26),  // "on_modelMakeButton_clicked"
+        QT_MOC_LITERAL(38, 0),  // ""
+        QT_MOC_LITERAL(39, 23),  // "on_engineButton_clicked"
+        QT_MOC_LITERAL(63, 27),  // "on_ePlacementButton_clicked"
+        QT_MOC_LITERAL(91, 27),  // "on_driveTrainButton_clicked"
+        QT_MOC_LITERAL(119, 21),  // "on_exitButton_clicked"
+        QT_MOC_LITERAL(141, 21),  // "on_fuelButton_clicked"
+        QT_MOC_LITERAL(163, 22),  // "on_transButton_clicked"
+        QT_MOC_LITERAL(186, 23)   // "on_finishButton_clicked"
     },
     "MainWindow",
-    "on_cylinderButton_clicked",
+    "on_modelMakeButton_clicked",
     "",
-    "on_displacementButton_clicked",
+    "on_engineButton_clicked",
+    "on_ePlacementButton_clicked",
     "on_driveTrainButton_clicked",
     "on_exitButton_clicked",
     "on_fuelButton_clicked",
     "on_transButton_clicked",
-    "on_typeButton_clicked",
     "on_finishButton_clicked"
 };
 #undef QT_MOC_LITERAL
@@ -138,9 +138,11 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
     qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSMainWindowENDCLASS_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<MainWindow, std::true_type>,
-        // method 'on_cylinderButton_clicked'
+        // method 'on_modelMakeButton_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_displacementButton_clicked'
+        // method 'on_engineButton_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_ePlacementButton_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_driveTrainButton_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
@@ -149,8 +151,6 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         // method 'on_fuelButton_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_transButton_clicked'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_typeButton_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_finishButton_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
@@ -164,13 +164,13 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         auto *_t = static_cast<MainWindow *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->on_cylinderButton_clicked(); break;
-        case 1: _t->on_displacementButton_clicked(); break;
-        case 2: _t->on_driveTrainButton_clicked(); break;
-        case 3: _t->on_exitButton_clicked(); break;
-        case 4: _t->on_fuelButton_clicked(); break;
-        case 5: _t->on_transButton_clicked(); break;
-        case 6: _t->on_typeButton_clicked(); break;
+        case 0: _t->on_modelMakeButton_clicked(); break;
+        case 1: _t->on_engineButton_clicked(); break;
+        case 2: _t->on_ePlacementButton_clicked(); break;
+        case 3: _t->on_driveTrainButton_clicked(); break;
+        case 4: _t->on_exitButton_clicked(); break;
+        case 5: _t->on_fuelButton_clicked(); break;
+        case 6: _t->on_transButton_clicked(); break;
         case 7: _t->on_finishButton_clicked(); break;
         default: ;
         }

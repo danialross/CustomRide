@@ -31,9 +31,9 @@ void boxWindow::on_comboBox_currentIndexChanged(int index)
 {
 
     if(mainWindow){
-        QString type = ui->comboBox->currentText();
-        mainWindow->setImageLabel(type);
-        mainWindow->getCar()->setType(type.toStdString());
+        QString modelMake = ui->comboBox->currentText();
+        mainWindow->setImageLabel(modelMake);
+        mainWindow->getCar()->setModelMake(modelMake.toStdString());
         comboIndex = index;
     }
 

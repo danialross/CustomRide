@@ -39,7 +39,7 @@
      <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="typeButton">
+   <widget class="QPushButton" name="modelMakeButton">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -49,10 +49,12 @@
      </rect>
     </property>
     <property name="text">
-     <string>Type</string>
+     <string>Make
+and
+Model</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="displacementButton">
+   <widget class="QPushButton" name="engineButton">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -62,10 +64,10 @@
      </rect>
     </property>
     <property name="text">
-     <string>Displacement</string>
+     <string>Engine</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="cylinderButton">
+   <widget class="QPushButton" name="ePlacementButton">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -74,8 +76,12 @@
       <height>71</height>
      </rect>
     </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
     <property name="text">
-     <string>Cylinders</string>
+     <string>Engine
+Placement</string>
     </property>
    </widget>
    <widget class="QPushButton" name="driveTrainButton">

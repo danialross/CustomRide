@@ -24,9 +24,9 @@ class Ui_MainWindow
 public:
     QWidget *centralwidget;
     QLabel *welcomeLabel;
-    QPushButton *typeButton;
-    QPushButton *displacementButton;
-    QPushButton *cylinderButton;
+    QPushButton *modelMakeButton;
+    QPushButton *engineButton;
+    QPushButton *ePlacementButton;
     QPushButton *driveTrainButton;
     QPushButton *fuelButton;
     QPushButton *transButton;
@@ -47,15 +47,16 @@ public:
         welcomeLabel = new QLabel(centralwidget);
         welcomeLabel->setObjectName("welcomeLabel");
         welcomeLabel->setGeometry(QRect(205, 10, 91, 61));
-        typeButton = new QPushButton(centralwidget);
-        typeButton->setObjectName("typeButton");
-        typeButton->setGeometry(QRect(10, 80, 100, 71));
-        displacementButton = new QPushButton(centralwidget);
-        displacementButton->setObjectName("displacementButton");
-        displacementButton->setGeometry(QRect(10, 150, 100, 71));
-        cylinderButton = new QPushButton(centralwidget);
-        cylinderButton->setObjectName("cylinderButton");
-        cylinderButton->setGeometry(QRect(10, 220, 100, 71));
+        modelMakeButton = new QPushButton(centralwidget);
+        modelMakeButton->setObjectName("modelMakeButton");
+        modelMakeButton->setGeometry(QRect(10, 80, 100, 71));
+        engineButton = new QPushButton(centralwidget);
+        engineButton->setObjectName("engineButton");
+        engineButton->setGeometry(QRect(10, 150, 100, 71));
+        ePlacementButton = new QPushButton(centralwidget);
+        ePlacementButton->setObjectName("ePlacementButton");
+        ePlacementButton->setGeometry(QRect(10, 220, 100, 71));
+        ePlacementButton->setLayoutDirection(Qt::LeftToRight);
         driveTrainButton = new QPushButton(centralwidget);
         driveTrainButton->setObjectName("driveTrainButton");
         driveTrainButton->setGeometry(QRect(390, 150, 100, 71));
@@ -90,9 +91,12 @@ public:
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         welcomeLabel->setText(QString());
-        typeButton->setText(QCoreApplication::translate("MainWindow", "Type", nullptr));
-        displacementButton->setText(QCoreApplication::translate("MainWindow", "Displacement", nullptr));
-        cylinderButton->setText(QCoreApplication::translate("MainWindow", "Cylinders", nullptr));
+        modelMakeButton->setText(QCoreApplication::translate("MainWindow", "Make\n"
+"and\n"
+"Model", nullptr));
+        engineButton->setText(QCoreApplication::translate("MainWindow", "Engine", nullptr));
+        ePlacementButton->setText(QCoreApplication::translate("MainWindow", "Engine\n"
+"Placement", nullptr));
         driveTrainButton->setText(QCoreApplication::translate("MainWindow", "Drive Train", nullptr));
         fuelButton->setText(QCoreApplication::translate("MainWindow", "Fuel", nullptr));
         transButton->setText(QCoreApplication::translate("MainWindow", "Transmission", nullptr));
