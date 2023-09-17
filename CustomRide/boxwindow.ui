@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>carTypeWindow</class>
- <widget class="QMainWindow" name="carTypeWindow">
+ <class>boxWindow</class>
+ <widget class="QMainWindow" name="boxWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -36,46 +36,6 @@
       <height>32</height>
      </rect>
     </property>
-    <item>
-     <property name="text">
-      <string> </string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Sedan</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Coupe</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Hatchback</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>SUV</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Van</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Station Wagon</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Truck</string>
-     </property>
-    </item>
    </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">

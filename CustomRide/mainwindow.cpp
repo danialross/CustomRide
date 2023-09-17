@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "cartypewindow.h"
+#include "boxwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
@@ -75,9 +75,8 @@ void MainWindow::on_transButton_clicked()
 void MainWindow::on_typeButton_clicked()
 {
 
-
     setEnabled(false);
-    carTypeWindow *newWindow = new carTypeWindow(this);
+    boxWindow *newWindow = new boxWindow(this,string("cars"));
     newWindow->show();
 
 }

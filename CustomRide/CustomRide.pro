@@ -12,20 +12,20 @@ INCLUDEPATH += /usr/bin/curl
 LIBS += -lcurl
 
 SOURCES += \
+    boxwindow.cpp \
     car.cpp \
-    cartypewindow.cpp \
     httprequest.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    boxwindow.h \
     car.h \
-    cartypewindow.h \
     httprequest.h \
     mainwindow.h
 
 FORMS += \
-    cartypewindow.ui \
+    boxwindow.ui \
     mainwindow.ui
 
 # Default rules for deployment.

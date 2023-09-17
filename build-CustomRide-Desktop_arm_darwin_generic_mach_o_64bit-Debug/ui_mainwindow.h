@@ -74,7 +74,7 @@ public:
         exitButton->setGeometry(QRect(450, 10, 41, 41));
         finishButton = new QPushButton(centralwidget);
         finishButton->setObjectName("finishButton");
-        finishButton->setGeometry(QRect(210, 300, 81, 31));
+        finishButton->setGeometry(QRect(210, 310, 81, 31));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");

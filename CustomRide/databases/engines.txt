@@ -1,0 +1,30 @@
+Acura - Hybrid 3.5L twin-turbo V6
+Alfa Romeo - 1.75L turbo inline-four
+Aston Martin - 4.0L twin-turbo V8
+Aston Martin - Supercharged 5.2L V12
+Audi - 2.9L twin-turbo V6
+Audi - 5.2L V10
+BMW - 3.0L twin-turbo inline-six
+Chevrolet - 6.2L V8
+Chevrolet - Supercharged V8 engines
+Dodge - Supercharged 6.2L V8
+Ferrari - 3.9L twin-turbo V8
+Ford - 3.5L twin-turbo V6
+Ford - Supercharged 5.2L V8
+Honda - Hybrid 3.5L twin-turbo V6
+Jaguar - Supercharged 5.0L V8
+Jaguar - Supercharged 5.0L V8
+Lamborghini - 5.2L V10
+Lexus - 5.0L V8
+Lotus - Supercharged 3.5L V6
+McLaren - 4.0L twin-turbo V8
+McLaren - Twin-turbocharged V8
+Mercedes-AMG - 4.0L twin-turbo V8
+Mercedes-AMG - 4.0L twin-turbo V8
+Mitsubishi - 2.0L turbo inline-four
+Nissan - 3.7L V6
+Nissan - 3.8L twin-turbo V6
+Porsche - 3.8L twin-turbo flat-six
+Porsche - 4.0L flat-six
+Subaru - 2.4L flat-four
+Subaru - 2.5L turbo flat-four

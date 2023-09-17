@@ -52,18 +52,18 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../CustomRide/car.cpp \
-		../CustomRide/cartypewindow.cpp \
+SOURCES       = ../CustomRide/boxwindow.cpp \
+		../CustomRide/car.cpp \
 		../CustomRide/httprequest.cpp \
 		../CustomRide/main.cpp \
-		../CustomRide/mainwindow.cpp moc_cartypewindow.cpp \
+		../CustomRide/mainwindow.cpp moc_boxwindow.cpp \
 		moc_mainwindow.cpp
-OBJECTS       = car.o \
-		cartypewindow.o \
+OBJECTS       = boxwindow.o \
+		car.o \
 		httprequest.o \
 		main.o \
 		mainwindow.o \
-		moc_cartypewindow.o \
+		moc_boxwindow.o \
 		moc_mainwindow.o
 DIST          = ../../../../Qt/6.5.2/macos/mkspecs/features/spec_pre.prf \
 		../../../../Qt/6.5.2/macos/mkspecs/features/device_config.prf \
@@ -363,11 +363,11 @@ DIST          = ../../../../Qt/6.5.2/macos/mkspecs/features/spec_pre.prf \
 		../../../../Qt/6.5.2/macos/mkspecs/features/exceptions.prf \
 		../../../../Qt/6.5.2/macos/mkspecs/features/yacc.prf \
 		../../../../Qt/6.5.2/macos/mkspecs/features/lex.prf \
-		../CustomRide/CustomRide.pro ../CustomRide/car.h \
-		../CustomRide/cartypewindow.h \
+		../CustomRide/CustomRide.pro ../CustomRide/boxwindow.h \
+		../CustomRide/car.h \
 		../CustomRide/httprequest.h \
-		../CustomRide/mainwindow.h ../CustomRide/car.cpp \
-		../CustomRide/cartypewindow.cpp \
+		../CustomRide/mainwindow.h ../CustomRide/boxwindow.cpp \
+		../CustomRide/car.cpp \
 		../CustomRide/httprequest.cpp \
 		../CustomRide/main.cpp \
 		../CustomRide/mainwindow.cpp
@@ -391,7 +391,7 @@ include /Users/danialross/Qt/6.5.2/macos/mkspecs/features/mac/sdk.mk
 first: all
 ####### Build rules
 
-CustomRide.app/Contents/MacOS/CustomRide: ui_cartypewindow.h ui_mainwindow.h $(OBJECTS)  
+CustomRide.app/Contents/MacOS/CustomRide: ui_boxwindow.h ui_mainwindow.h $(OBJECTS)  
 	@test -d CustomRide.app/Contents/MacOS/ || mkdir -p CustomRide.app/Contents/MacOS/
 	$(LINK) $(LFLAGS) -o $(TARGET)  $(OBJECTS) $(OBJCOMP) $(LIBS)
 
@@ -1024,9 +1024,9 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../CustomRide/car.h ../CustomRide/cartypewindow.h ../CustomRide/httprequest.h ../CustomRide/mainwindow.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../CustomRide/car.cpp ../CustomRide/cartypewindow.cpp ../CustomRide/httprequest.cpp ../CustomRide/main.cpp ../CustomRide/mainwindow.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../CustomRide/cartypewindow.ui ../CustomRide/mainwindow.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../CustomRide/boxwindow.h ../CustomRide/car.h ../CustomRide/httprequest.h ../CustomRide/mainwindow.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../CustomRide/boxwindow.cpp ../CustomRide/car.cpp ../CustomRide/httprequest.cpp ../CustomRide/main.cpp ../CustomRide/mainwindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../CustomRide/boxwindow.ui ../CustomRide/mainwindow.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -1055,19 +1055,21 @@ benchmark: first
 
 compiler_rcc_make_all:
 compiler_rcc_clean:
-compiler_moc_header_make_all: moc_cartypewindow.cpp moc_mainwindow.cpp
+compiler_moc_header_make_all: moc_boxwindow.cpp moc_mainwindow.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_cartypewindow.cpp moc_mainwindow.cpp
-moc_cartypewindow.cpp: ../CustomRide/cartypewindow.h \
+	-$(DEL_FILE) moc_boxwindow.cpp moc_mainwindow.cpp
+moc_boxwindow.cpp: ../CustomRide/boxwindow.h \
 		../../../../Qt/6.5.2/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../../Qt/6.5.2/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		../CustomRide/mainwindow.h \
+		../CustomRide/car.h \
 		../../../../Qt/6.5.2/macos/libexec/moc
-	/Users/danialross/Qt/6.5.2/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=14 -D__clang_minor__=0 -D__clang_patchlevel__=3 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/danialross/Qt/6.5.2/macos/mkspecs/macx-clang -I/Users/danialross/Documents/GitHub/CustomRide/CustomRide -I/usr/bin/curl -I/Users/danialross/Qt/6.5.2/macos/lib/QtWidgets.framework/Headers -I/Users/danialross/Qt/6.5.2/macos/lib/QtGui.framework/Headers -I/Users/danialross/Qt/6.5.2/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/danialross/Qt/6.5.2/macos/lib ../CustomRide/cartypewindow.h -o moc_cartypewindow.cpp
+	/Users/danialross/Qt/6.5.2/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=14 -D__clang_minor__=0 -D__clang_patchlevel__=3 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/danialross/Qt/6.5.2/macos/mkspecs/macx-clang -I/Users/danialross/Documents/GitHub/CustomRide/CustomRide -I/usr/bin/curl -I/Users/danialross/Qt/6.5.2/macos/lib/QtWidgets.framework/Headers -I/Users/danialross/Qt/6.5.2/macos/lib/QtGui.framework/Headers -I/Users/danialross/Qt/6.5.2/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/danialross/Qt/6.5.2/macos/lib ../CustomRide/boxwindow.h -o moc_boxwindow.cpp
 
 moc_mainwindow.cpp: ../CustomRide/mainwindow.h \
 		../../../../Qt/6.5.2/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../../Qt/6.5.2/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../CustomRide/car.h \
 		../../../../Qt/6.5.2/macos/libexec/moc
 	/Users/danialross/Qt/6.5.2/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=14 -D__clang_minor__=0 -D__clang_patchlevel__=3 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/danialross/Qt/6.5.2/macos/mkspecs/macx-clang -I/Users/danialross/Documents/GitHub/CustomRide/CustomRide -I/usr/bin/curl -I/Users/danialross/Qt/6.5.2/macos/lib/QtWidgets.framework/Headers -I/Users/danialross/Qt/6.5.2/macos/lib/QtGui.framework/Headers -I/Users/danialross/Qt/6.5.2/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/danialross/Qt/6.5.2/macos/lib ../CustomRide/mainwindow.h -o moc_mainwindow.cpp
 
@@ -1075,12 +1077,12 @@ compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_cartypewindow.h ui_mainwindow.h
+compiler_uic_make_all: ui_boxwindow.h ui_mainwindow.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_cartypewindow.h ui_mainwindow.h
-ui_cartypewindow.h: ../CustomRide/cartypewindow.ui \
+	-$(DEL_FILE) ui_boxwindow.h ui_mainwindow.h
+ui_boxwindow.h: ../CustomRide/boxwindow.ui \
 		../../../../Qt/6.5.2/macos/libexec/uic
-	/Users/danialross/Qt/6.5.2/macos/libexec/uic ../CustomRide/cartypewindow.ui -o ui_cartypewindow.h
+	/Users/danialross/Qt/6.5.2/macos/libexec/uic ../CustomRide/boxwindow.ui -o ui_boxwindow.h
 
 ui_mainwindow.h: ../CustomRide/mainwindow.ui \
 		../../../../Qt/6.5.2/macos/libexec/uic
@@ -1098,16 +1100,15 @@ compiler_clean: compiler_moc_header_clean compiler_uic_clean
 
 ####### Compile
 
-car.o: ../CustomRide/car.cpp ../CustomRide/car.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o car.o ../CustomRide/car.cpp
-
-cartypewindow.o: ../CustomRide/cartypewindow.cpp ../CustomRide/cartypewindow.h \
+boxwindow.o: ../CustomRide/boxwindow.cpp ../CustomRide/boxWindow.h \
 		../../../../Qt/6.5.2/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../../Qt/6.5.2/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		../CustomRide/mainwindow.h \
-		ui_cartypewindow.h \
-		ui_mainwindow.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o cartypewindow.o ../CustomRide/cartypewindow.cpp
+		../CustomRide/car.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o boxwindow.o ../CustomRide/boxwindow.cpp
+
+car.o: ../CustomRide/car.cpp ../CustomRide/car.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o car.o ../CustomRide/car.cpp
 
 httprequest.o: ../CustomRide/httprequest.cpp ../CustomRide/httprequest.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o httprequest.o ../CustomRide/httprequest.cpp
@@ -1115,6 +1116,7 @@ httprequest.o: ../CustomRide/httprequest.cpp ../CustomRide/httprequest.h
 main.o: ../CustomRide/main.cpp ../CustomRide/mainwindow.h \
 		../../../../Qt/6.5.2/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../../Qt/6.5.2/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../CustomRide/car.h \
 		../../../../Qt/6.5.2/macos/lib/QtWidgets.framework/Headers/QApplication \
 		../../../../Qt/6.5.2/macos/lib/QtWidgets.framework/Headers/qapplication.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../CustomRide/main.cpp
@@ -1122,12 +1124,13 @@ main.o: ../CustomRide/main.cpp ../CustomRide/mainwindow.h \
 mainwindow.o: ../CustomRide/mainwindow.cpp ../CustomRide/mainwindow.h \
 		../../../../Qt/6.5.2/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../../Qt/6.5.2/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../CustomRide/car.h \
 		ui_mainwindow.h \
-		../CustomRide/cartypewindow.h
+		../CustomRide/boxwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../CustomRide/mainwindow.cpp
 
-moc_cartypewindow.o: moc_cartypewindow.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_cartypewindow.o moc_cartypewindow.cpp
+moc_boxwindow.o: moc_boxwindow.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_boxwindow.o moc_boxwindow.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
