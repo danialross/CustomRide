@@ -43,7 +43,7 @@ public:
         doneButton->setGeometry(QRect(110, 140, 61, 32));
         comboBox = new QComboBox(centralwidget);
         comboBox->setObjectName("comboBox");
-        comboBox->setGeometry(QRect(70, 80, 151, 32));
+        comboBox->setGeometry(QRect(40, 80, 211, 32));
         label = new QLabel(centralwidget);
         label->setObjectName("label");
         label->setGeometry(QRect(90, 30, 111, 16));

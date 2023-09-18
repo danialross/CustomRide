@@ -14,18 +14,18 @@ class boxWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit boxWindow(MainWindow *mainWindow,string db,QWidget *parent = nullptr);
+    explicit boxWindow(MainWindow *mainWindow, string db, QWidget *parent = nullptr);
     ~boxWindow();
 
 private slots:
     void on_doneButton_clicked();
-    void on_comboBox_currentIndexChanged(int index);
-    void populateCombobox(string filename);
+    void on_comboBox_activated(int index);
 
 private:
     Ui::boxWindow *ui;
     MainWindow *mainWindow;
-    int comboIndex;
+    unordered_map<string,int> *map;
+    void initCombobox(string filename);
 
 
 };

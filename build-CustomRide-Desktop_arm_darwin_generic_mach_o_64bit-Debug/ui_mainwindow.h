@@ -68,7 +68,7 @@ public:
         transButton->setGeometry(QRect(390, 80, 100, 71));
         imageViewer = new QLabel(centralwidget);
         imageViewer->setObjectName("imageViewer");
-        imageViewer->setGeometry(QRect(120, 90, 261, 191));
+        imageViewer->setGeometry(QRect(120, 80, 261, 211));
         imageViewer->setAlignment(Qt::AlignCenter);
         exitButton = new QPushButton(centralwidget);
         exitButton->setObjectName("exitButton");

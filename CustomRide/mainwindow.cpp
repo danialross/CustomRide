@@ -81,7 +81,7 @@ void MainWindow::on_modelMakeButton_clicked()
 {
 
     setEnabled(false);
-    boxWindow *newWindow = new boxWindow(this,string("cars"));
+    boxWindow *newWindow = new boxWindow(this,"cars");
     newWindow->show();
 
 }

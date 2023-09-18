@@ -1,23 +1,32 @@
 #include "ui_boxwindow.h"
 #include "boxwindow.h"
 
-boxWindow::boxWindow(MainWindow *mainWindow,string db,QWidget *parent) :
+boxWindow::boxWindow(MainWindow *mainWindow,string db, QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::boxWindow)
+    ui(new Ui::boxWindow),
+    map(new unordered_map<string,int>)
 {
     this->mainWindow = mainWindow;
     ui->setupUi(this);
 
-    populateCombobox(db);
+    initCombobox(db);
 
-    int index = comboIndex;
-    ui->comboBox->setCurrentIndex(index);
+    string car = mainWindow->getCar()->getModelMake();
+    cout << "the car : " << mainWindow->getCar()->getModelMake() << endl;
+    auto it = map->find(car);
 
+    if(it != map->end()){
+        ui->comboBox->setCurrentIndex(it->second);
+        cout << "car found";
+    }else{
+        cout << "car not found" << endl;
+    }
 }
 
 boxWindow::~boxWindow()
 {
     delete ui;
+    delete map;
 }
 
 void boxWindow::on_doneButton_clicked()
@@ -26,20 +35,7 @@ void boxWindow::on_doneButton_clicked()
     close();
 }
 
-
-void boxWindow::on_comboBox_currentIndexChanged(int index)
-{
-
-    if(mainWindow){
-        QString modelMake = ui->comboBox->currentText();
-        mainWindow->setImageLabel(modelMake);
-        mainWindow->getCar()->setModelMake(modelMake.toStdString());
-        comboIndex = index;
-    }
-
-}
-
-void boxWindow::populateCombobox(string filename){
+void boxWindow::initCombobox(string filename){
     // Specify the full or relative path to the file
     filesystem::path directory = filesystem::current_path().parent_path().parent_path().parent_path().parent_path();
     directory /= "CustomRide/databases/";
@@ -56,13 +52,22 @@ void boxWindow::populateCombobox(string filename){
 
     // Read and display the file line by line
     string line;
+    int counter = 1;
     ui->comboBox->addItem("");
     while (getline(inputFile, line)) {
-        ui->comboBox->addItem(QString::fromStdString(line) );
+        ui->comboBox->addItem(QString::fromStdString(line));
+        map->insert({line,counter++});
     }
 
     // Close the file
     inputFile.close();
 }
 
+
+void boxWindow::on_comboBox_activated(int index)
+{
+    QString modelMake = ui->comboBox->currentText();
+    mainWindow->setImageLabel(modelMake);
+    mainWindow->getCar()->setModelMake(modelMake.toStdString());
+}
 
