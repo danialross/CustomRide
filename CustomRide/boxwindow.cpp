@@ -1,28 +1,25 @@
 #include "ui_boxwindow.h"
 #include "boxwindow.h"
 
-boxWindow::boxWindow(MainWindow *mainWindow,string db, QWidget *parent) :
+boxWindow::boxWindow(MainWindow *mainWindow,string db,getterFunc getter,setterFunc setter, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::boxWindow),
-    map(new unordered_map<string,int>)
+    map(new unordered_map<string,int>),
+    getter(getter),
+    setter(setter)
 {
     this->mainWindow = mainWindow;
     ui->setupUi(this);
 
     initCombobox(db);
 
-    string car = mainWindow->getCar()->getModelMake();
-    cout << "the car : " << mainWindow->getCar()->getModelMake() << endl;
+    string car = (mainWindow->getCar()->*getter)();
     auto it = map->find(car);
 
     if(it != map->end()){
         ui->comboBox->setCurrentIndex(it->second);
-        cout << "car found";
-    }else{
-        cout << "car not found" << endl;
     }
 }
-
 boxWindow::~boxWindow()
 {
     delete ui;
@@ -68,6 +65,6 @@ void boxWindow::on_comboBox_activated(int index)
 {
     QString modelMake = ui->comboBox->currentText();
     mainWindow->setImageLabel(modelMake);
-    mainWindow->getCar()->setModelMake(modelMake.toStdString());
+    (mainWindow->getCar()->*setter)(modelMake.toStdString());
 }
 

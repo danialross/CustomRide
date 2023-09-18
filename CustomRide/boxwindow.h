@@ -9,12 +9,15 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class boxWindow; }
 QT_END_NAMESPACE
 
+using setterFunc = void (Car::*)(const string&);
+using getterFunc = string (Car::*)() const;
+
 class boxWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit boxWindow(MainWindow *mainWindow, string db, QWidget *parent = nullptr);
+    explicit boxWindow(MainWindow *mainWindow, string db,getterFunc getter, setterFunc setter, QWidget *parent = nullptr);
     ~boxWindow();
 
 private slots:
@@ -26,6 +29,8 @@ private:
     MainWindow *mainWindow;
     unordered_map<string,int> *map;
     void initCombobox(string filename);
+    getterFunc getter;
+    setterFunc setter;
 
 
 };

@@ -49,7 +49,9 @@ void MainWindow::setImageLabel(QString str){
 
 void MainWindow::on_engineButton_clicked()
 {
-
+    setEnabled(false);
+    //boxWindow *newWindow = new boxWindow(this,"engines");
+    //newWindow->show();
 }
 
 void MainWindow::on_ePlacementButton_clicked()
@@ -81,7 +83,7 @@ void MainWindow::on_modelMakeButton_clicked()
 {
 
     setEnabled(false);
-    boxWindow *newWindow = new boxWindow(this,"cars");
+    boxWindow *newWindow = new boxWindow(this,"cars",&Car::getModelMake,&Car::setModelMake);
     newWindow->show();
 
 }
