@@ -48,6 +48,9 @@
       <height>71</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #FF6666 ; color: black</string>
+    </property>
     <property name="text">
      <string>Make
 and
@@ -62,6 +65,9 @@ Model</string>
       <width>100</width>
       <height>71</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #FF6666 ; color: black</string>
     </property>
     <property name="text">
      <string>Engine</string>
@@ -79,6 +85,9 @@ Model</string>
     <property name="layoutDirection">
      <enum>Qt::LeftToRight</enum>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #FF6666 ; color: black</string>
+    </property>
     <property name="text">
      <string>Engine
 Placement</string>
@@ -93,6 +102,9 @@ Placement</string>
       <height>71</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #FF6666 ; color: black</string>
+    </property>
     <property name="text">
      <string>Drive Train</string>
     </property>
@@ -106,6 +118,9 @@ Placement</string>
       <height>71</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #FF6666 ; color: black</string>
+    </property>
     <property name="text">
      <string>Fuel</string>
     </property>
@@ -118,6 +133,9 @@ Placement</string>
       <width>100</width>
       <height>71</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #FF6666 ; color: black</string>
     </property>
     <property name="text">
      <string>Transmission</string>
@@ -148,6 +166,9 @@ Placement</string>
       <height>41</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true"> color: black</string>
+    </property>
     <property name="text">
      <string>Exit</string>
     </property>
@@ -160,6 +181,9 @@ Placement</string>
       <width>81</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"> color: black</string>
     </property>
     <property name="text">
      <string>Finish</string>

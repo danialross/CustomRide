@@ -1,5 +1,6 @@
 #include "ui_boxwindow.h"
 #include "boxwindow.h"
+#include "ui_mainwindow.h"
 
 boxWindow::boxWindow(MainWindow *mainWindow,string db,getterFunc getter,setterFunc setter, QWidget *parent) :
     QMainWindow(parent),
@@ -28,6 +29,13 @@ boxWindow::~boxWindow()
 
 void boxWindow::on_doneButton_clicked()
 {
+    Car *car = mainWindow->getCar();
+    if(car->getModelMake() == ""){
+        mainWindow->getUi()->modelMakeButton->setStyleSheet("background-color: #FF6666; color: black");
+    }else{
+        mainWindow->getUi()->modelMakeButton->setStyleSheet("background-color: #66FF66; color: black");
+    }
+    mainWindow->getUi()->modelMakeButton->update();
     this->mainWindow->setEnabled(true);
     close();
 }

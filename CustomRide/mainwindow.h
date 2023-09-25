@@ -20,6 +20,7 @@ public:
     ~MainWindow();
     Car *getCar() const;
     void setImageLabel(QString str);
+    Ui::MainWindow *getUi() const;
 
 private slots:
 

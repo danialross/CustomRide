@@ -50,8 +50,8 @@ void MainWindow::setImageLabel(QString str){
 void MainWindow::on_engineButton_clicked()
 {
     setEnabled(false);
-    //boxWindow *newWindow = new boxWindow(this,"engines");
-    //newWindow->show();
+    boxWindow *newWindow = new boxWindow(this,"engines",&Car::getEngine,&Car::setEngine);
+    newWindow->show();
 }
 
 void MainWindow::on_ePlacementButton_clicked()
@@ -81,16 +81,19 @@ void MainWindow::on_transButton_clicked()
 
 void MainWindow::on_modelMakeButton_clicked()
 {
-
     setEnabled(false);
     boxWindow *newWindow = new boxWindow(this,"cars",&Car::getModelMake,&Car::setModelMake);
     newWindow->show();
-
 }
 
 void MainWindow::on_finishButton_clicked()
 {
 
+}
+
+Ui::MainWindow *MainWindow::getUi() const
+{
+    return ui;
 }
 
 Car *MainWindow::getCar() const
