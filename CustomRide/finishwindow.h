@@ -19,7 +19,7 @@ public:
 private slots:
     void on_backButton_clicked();
 
-    void on_repeatButton_clicked();
+    void on_newCarButton_clicked();
 
     void on_finishButton_clicked();
 

@@ -27,7 +27,7 @@
      <string>Loading</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="repeatButton">
+   <widget class="QPushButton" name="newCarButton">
     <property name="geometry">
      <rect>
       <x>340</x>

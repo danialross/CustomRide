@@ -41,7 +41,7 @@ static constexpr auto qt_meta_stringdata_CLASSfinishWindowENDCLASS = QtMocHelper
     "finishWindow",
     "on_backButton_clicked",
     "",
-    "on_repeatButton_clicked",
+    "on_newCarButton_clicked",
     "on_finishButton_clicked"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
@@ -60,13 +60,13 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSfinishWindowENDCLASS_t qt_meta_
         QT_MOC_LITERAL(0, 12),  // "finishWindow"
         QT_MOC_LITERAL(13, 21),  // "on_backButton_clicked"
         QT_MOC_LITERAL(35, 0),  // ""
-        QT_MOC_LITERAL(36, 23),  // "on_repeatButton_clicked"
+        QT_MOC_LITERAL(36, 23),  // "on_newCarButton_clicked"
         QT_MOC_LITERAL(60, 23)   // "on_finishButton_clicked"
     },
     "finishWindow",
     "on_backButton_clicked",
     "",
-    "on_repeatButton_clicked",
+    "on_newCarButton_clicked",
     "on_finishButton_clicked"
 };
 #undef QT_MOC_LITERAL
@@ -110,7 +110,7 @@ Q_CONSTINIT const QMetaObject finishWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<finishWindow, std::true_type>,
         // method 'on_backButton_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_repeatButton_clicked'
+        // method 'on_newCarButton_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_finishButton_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
@@ -125,7 +125,7 @@ void finishWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         (void)_t;
         switch (_id) {
         case 0: _t->on_backButton_clicked(); break;
-        case 1: _t->on_repeatButton_clicked(); break;
+        case 1: _t->on_newCarButton_clicked(); break;
         case 2: _t->on_finishButton_clicked(); break;
         default: ;
         }

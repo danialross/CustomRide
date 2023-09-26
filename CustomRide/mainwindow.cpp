@@ -8,7 +8,8 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
     ui(new Ui::MainWindow),
-    car(new Car())
+    car(new Car()),
+    carPic(new QString(""))
 {
     ui->setupUi(this);
 
@@ -96,6 +97,22 @@ void MainWindow::on_finishButton_clicked()
     setEnabled(false);
     finishWindow *newWindow = new finishWindow(this,*carPic);
     newWindow->show();
+}
+
+void MainWindow::reset()
+{
+    ui->modelMakeButton->setStyleSheet("background-color: #FF6666; color: black");
+    ui->driveTrainButton->setStyleSheet("background-color: #FF6666; color: black");
+    ui->layoutButton->setStyleSheet("background-color: #FF6666; color: black");
+    ui->engineButton->setStyleSheet("background-color: #FF6666; color: black");
+    ui->fuelButton->setStyleSheet("background-color: #FF6666; color: black");
+    ui->transButton->setStyleSheet("background-color: #FF6666; color: black");
+    ui->finishButton->setEnabled(false);
+    ui->imageViewer->setText("No Type Selected");
+    ui->imageViewer->setAlignment(Qt::AlignCenter);
+    car = new Car();
+    carPic = new QString("");
+
 }
 
 void MainWindow::on_exitButton_clicked()

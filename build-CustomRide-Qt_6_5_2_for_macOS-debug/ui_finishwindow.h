@@ -24,7 +24,7 @@ class Ui_finishWindow
 public:
     QWidget *centralwidget;
     QLabel *imageViewer;
-    QPushButton *repeatButton;
+    QPushButton *newCarButton;
     QPushButton *finishButton;
     QLabel *descriptionLabel;
     QPushButton *backButton;
@@ -40,9 +40,9 @@ public:
         imageViewer = new QLabel(centralwidget);
         imageViewer->setObjectName("imageViewer");
         imageViewer->setGeometry(QRect(300, 20, 291, 301));
-        repeatButton = new QPushButton(centralwidget);
-        repeatButton->setObjectName("repeatButton");
-        repeatButton->setGeometry(QRect(340, 340, 141, 32));
+        newCarButton = new QPushButton(centralwidget);
+        newCarButton->setObjectName("newCarButton");
+        newCarButton->setGeometry(QRect(340, 340, 141, 32));
         finishButton = new QPushButton(centralwidget);
         finishButton->setObjectName("finishButton");
         finishButton->setGeometry(QRect(490, 340, 100, 32));
@@ -67,7 +67,7 @@ public:
     {
         finishWindow->setWindowTitle(QCoreApplication::translate("finishWindow", "MainWindow", nullptr));
         imageViewer->setText(QCoreApplication::translate("finishWindow", "Loading", nullptr));
-        repeatButton->setText(QCoreApplication::translate("finishWindow", "Create a new car", nullptr));
+        newCarButton->setText(QCoreApplication::translate("finishWindow", "Create a new car", nullptr));
         finishButton->setText(QCoreApplication::translate("finishWindow", "Finish", nullptr));
         descriptionLabel->setText(QCoreApplication::translate("finishWindow", "TextLabel", nullptr));
         backButton->setText(QCoreApplication::translate("finishWindow", "Back", nullptr));

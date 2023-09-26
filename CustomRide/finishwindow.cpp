@@ -20,13 +20,14 @@ finishWindow::finishWindow(MainWindow *mainWindow,QString img,QWidget *parent) :
     QString transmission = QString::fromStdString(car->getTransmisson());
     QString driveTrain = QString::fromStdString(car->getDriveTrain());
     QString fuel = QString::fromStdString(car->getFuel());
-    QString specs = QString("Car Specifications\n\n"
-                                  "Model And Make:\n" + modelMake + "\n\n"
-                                  "Engine :\n" + engine + "\n\n"
-                                  "Layout :\n" + layout + "\n\n"
-                                  "Transmission :\n" + transmission + "\n\n"
-                                  "Drive Train :\n" + driveTrain + "\n\n"
-                                  "Fuel :\n" + fuel + "\n\n");
+    QString specs = QString(
+                            "Car Specifications\n\n"
+                            "Model And Make:\n" + modelMake + "\n\n"
+                            "Engine :\n" + engine + "\n\n"
+                            "Layout :\n" + layout + "\n\n"
+                            "Transmission :\n" + transmission + "\n\n"
+                            "Drive Train :\n" + driveTrain + "\n\n"
+                            "Fuel :\n" + fuel + "\n\n");
 
     ui->descriptionLabel->setText(specs);
 
@@ -44,19 +45,17 @@ void finishWindow::on_backButton_clicked()
 }
 
 // deletes all the data from car and opens a new window
-void finishWindow::on_repeatButton_clicked()
+void finishWindow::on_newCarButton_clicked()
 {
-//    close();
-//    mainWindow->close();
-//    MainWindow *newWindow = new MainWindow(this);
-//    newWindow->show();
-
+    mainWindow->setEnabled(true);
+    mainWindow->reset();
+    close();
 }
 
 
 void finishWindow::on_finishButton_clicked()
 {
     close();
-
+    mainWindow->close();
 }
 

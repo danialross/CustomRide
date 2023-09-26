@@ -22,6 +22,7 @@ public:
     void setImageLabel(QString str);
     Ui::MainWindow *getUi() const;
     void isCarComplete();
+    void reset();
 
 private slots:
     void on_modelMakeButton_clicked();
@@ -32,7 +33,6 @@ private slots:
     void on_fuelButton_clicked();
     void on_transButton_clicked();
     void on_finishButton_clicked();
-
 
 private:
     Ui::MainWindow *ui;
