@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "boxwindow.h"
+#include "finishwindow.h"
 #include "httprequest.h"
 #include "nlohmann/json.hpp"
 
@@ -91,7 +92,9 @@ void MainWindow::on_modelMakeButton_clicked()
 
 void MainWindow::on_finishButton_clicked()
 {
-
+    setEnabled(false);
+    finishWindow *newWindow = new finishWindow(this);
+    newWindow->show();
 }
 
 void MainWindow::on_exitButton_clicked()

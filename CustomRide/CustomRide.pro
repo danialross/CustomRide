@@ -14,6 +14,7 @@ LIBS += -lcurl
 SOURCES += \
     boxwindow.cpp \
     car.cpp \
+    finishwindow.cpp \
     httprequest.cpp \
     main.cpp \
     mainwindow.cpp
@@ -21,11 +22,13 @@ SOURCES += \
 HEADERS += \
     boxwindow.h \
     car.h \
+    finishwindow.h \
     httprequest.h \
     mainwindow.h
 
 FORMS += \
     boxwindow.ui \
+    finishwindow.ui \
     mainwindow.ui
 
 # Default rules for deployment.
