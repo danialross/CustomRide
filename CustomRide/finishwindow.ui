@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string>Loading</string>
     </property>
    </widget>
    <widget class="QPushButton" name="repeatButton">

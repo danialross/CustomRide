@@ -66,7 +66,7 @@ public:
     void retranslateUi(QMainWindow *finishWindow)
     {
         finishWindow->setWindowTitle(QCoreApplication::translate("finishWindow", "MainWindow", nullptr));
-        imageViewer->setText(QCoreApplication::translate("finishWindow", "TextLabel", nullptr));
+        imageViewer->setText(QCoreApplication::translate("finishWindow", "Loading", nullptr));
         repeatButton->setText(QCoreApplication::translate("finishWindow", "Create a new car", nullptr));
         finishButton->setText(QCoreApplication::translate("finishWindow", "Finish", nullptr));
         descriptionLabel->setText(QCoreApplication::translate("finishWindow", "TextLabel", nullptr));
