@@ -5,7 +5,7 @@ Car::Car(){}
 bool Car::isComplete(){
 
     if(engine.empty()) return false;
-    if(ePlacement.empty()) return false;
+    if(layout.empty()) return false;
     if(transmisson.empty()) return false;
     if(driveTrain.empty()) return false;
     if(fuel.empty()) return false;
@@ -43,6 +43,16 @@ void Car::setFuel(const string &newFuel)
     fuel = newFuel;
 }
 
+string Car::getLayout() const
+{
+    return layout;
+}
+
+void Car::setLayout(const string &newLayout)
+{
+    layout = newLayout;
+}
+
 string Car::getEngine() const
 {
     return engine;
@@ -51,16 +61,6 @@ string Car::getEngine() const
 void Car::setEngine(const string &newEngine)
 {
     engine = newEngine;
-}
-
-string Car::getEPlacement() const
-{
-    return ePlacement;
-}
-
-void Car::setEPlacement(const string &newEPlacement)
-{
-    ePlacement = newEPlacement;
 }
 
 string Car::getModelMake() const

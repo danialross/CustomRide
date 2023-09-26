@@ -54,7 +54,7 @@ void MainWindow::on_engineButton_clicked()
     newWindow->show();
 }
 
-void MainWindow::on_ePlacementButton_clicked()
+void MainWindow::on_layoutButton_clicked()
 {
 
 }
@@ -100,9 +100,5 @@ Car *MainWindow::getCar() const
 {
     return car;
 }
-
-
-
-
 
 

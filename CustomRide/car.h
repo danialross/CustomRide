@@ -18,9 +18,6 @@ public:
     string getEngine() const;
     void setEngine(const string &newEngine);
 
-    string getEPlacement() const;
-    void setEPlacement(const string &newEPlacement);
-
     string getTransmisson() const;
     void setTransmisson(const string &newTransmisson);
 
@@ -33,10 +30,13 @@ public:
 
 
 
+    string getLayout() const;
+    void setLayout(const string &newLayout);
+
 private:
     string modelMake;
     string engine;
-    string ePlacement;
+    string layout;
     string transmisson;
     string driveTrain;
     string fuel;

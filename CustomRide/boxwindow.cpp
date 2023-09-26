@@ -37,8 +37,8 @@ void boxWindow::on_doneButton_clicked()
     }else if(getter == &Car::getDriveTrain){
         button = mainWindow->getUi()->driveTrainButton;
 
-    }else if(getter == &Car::getEPlacement ){
-        button = mainWindow->getUi()->ePlacementButton;
+    }else if(getter == &Car::getLayout ){
+        button = mainWindow->getUi()->layoutButton;
 
     }else if(getter == &Car::getEngine ){
         button = mainWindow->getUi()->engineButton;

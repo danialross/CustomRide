@@ -26,7 +26,7 @@ public:
     QLabel *welcomeLabel;
     QPushButton *modelMakeButton;
     QPushButton *engineButton;
-    QPushButton *ePlacementButton;
+    QPushButton *layoutButton;
     QPushButton *driveTrainButton;
     QPushButton *fuelButton;
     QPushButton *transButton;
@@ -55,11 +55,11 @@ public:
         engineButton->setObjectName("engineButton");
         engineButton->setGeometry(QRect(10, 150, 100, 71));
         engineButton->setStyleSheet(QString::fromUtf8("background-color: #FF6666 ; color: black"));
-        ePlacementButton = new QPushButton(centralwidget);
-        ePlacementButton->setObjectName("ePlacementButton");
-        ePlacementButton->setGeometry(QRect(10, 220, 100, 71));
-        ePlacementButton->setLayoutDirection(Qt::LeftToRight);
-        ePlacementButton->setStyleSheet(QString::fromUtf8("background-color: #FF6666 ; color: black"));
+        layoutButton = new QPushButton(centralwidget);
+        layoutButton->setObjectName("layoutButton");
+        layoutButton->setGeometry(QRect(10, 220, 100, 71));
+        layoutButton->setLayoutDirection(Qt::LeftToRight);
+        layoutButton->setStyleSheet(QString::fromUtf8("background-color: #FF6666 ; color: black"));
         driveTrainButton = new QPushButton(centralwidget);
         driveTrainButton->setObjectName("driveTrainButton");
         driveTrainButton->setGeometry(QRect(390, 150, 100, 71));
@@ -79,11 +79,11 @@ public:
         exitButton = new QPushButton(centralwidget);
         exitButton->setObjectName("exitButton");
         exitButton->setGeometry(QRect(450, 10, 41, 41));
-        exitButton->setStyleSheet(QString::fromUtf8(" color: black"));
+        exitButton->setStyleSheet(QString::fromUtf8(" background-color: white ; color: black"));
         finishButton = new QPushButton(centralwidget);
         finishButton->setObjectName("finishButton");
         finishButton->setGeometry(QRect(210, 310, 81, 31));
-        finishButton->setStyleSheet(QString::fromUtf8(" color: black"));
+        finishButton->setStyleSheet(QString::fromUtf8(" background-color: white ; color: black"));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -103,8 +103,7 @@ public:
 "and\n"
 "Model", nullptr));
         engineButton->setText(QCoreApplication::translate("MainWindow", "Engine", nullptr));
-        ePlacementButton->setText(QCoreApplication::translate("MainWindow", "Engine\n"
-"Placement", nullptr));
+        layoutButton->setText(QCoreApplication::translate("MainWindow", "Layout", nullptr));
         driveTrainButton->setText(QCoreApplication::translate("MainWindow", "Drive Train", nullptr));
         fuelButton->setText(QCoreApplication::translate("MainWindow", "Fuel", nullptr));
         transButton->setText(QCoreApplication::translate("MainWindow", "Transmission", nullptr));

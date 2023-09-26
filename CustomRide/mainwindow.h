@@ -23,10 +23,9 @@ public:
     Ui::MainWindow *getUi() const;
 
 private slots:
-
     void on_modelMakeButton_clicked();
     void on_engineButton_clicked();
-    void on_ePlacementButton_clicked();
+    void on_layoutButton_clicked();
     void on_driveTrainButton_clicked();
     void on_exitButton_clicked();
     void on_fuelButton_clicked();
