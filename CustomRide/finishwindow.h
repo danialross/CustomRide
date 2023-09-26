@@ -13,7 +13,7 @@ class finishWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit finishWindow(MainWindow *mainWindow,QWidget *parent = nullptr);
+    explicit finishWindow(MainWindow *mainWindow,QString img,QWidget *parent = nullptr);
     ~finishWindow();
 
 private slots:

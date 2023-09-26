@@ -23,7 +23,7 @@ class Ui_finishWindow
 {
 public:
     QWidget *centralwidget;
-    QLabel *imageviewer;
+    QLabel *imageViewer;
     QPushButton *repeatButton;
     QPushButton *finishButton;
     QLabel *descriptionLabel;
@@ -37,9 +37,9 @@ public:
         finishWindow->resize(607, 404);
         centralwidget = new QWidget(finishWindow);
         centralwidget->setObjectName("centralwidget");
-        imageviewer = new QLabel(centralwidget);
-        imageviewer->setObjectName("imageviewer");
-        imageviewer->setGeometry(QRect(300, 20, 291, 301));
+        imageViewer = new QLabel(centralwidget);
+        imageViewer->setObjectName("imageViewer");
+        imageViewer->setGeometry(QRect(300, 20, 291, 301));
         repeatButton = new QPushButton(centralwidget);
         repeatButton->setObjectName("repeatButton");
         repeatButton->setGeometry(QRect(340, 340, 141, 32));
@@ -66,7 +66,7 @@ public:
     void retranslateUi(QMainWindow *finishWindow)
     {
         finishWindow->setWindowTitle(QCoreApplication::translate("finishWindow", "MainWindow", nullptr));
-        imageviewer->setText(QCoreApplication::translate("finishWindow", "TextLabel", nullptr));
+        imageViewer->setText(QCoreApplication::translate("finishWindow", "TextLabel", nullptr));
         repeatButton->setText(QCoreApplication::translate("finishWindow", "Create a new car", nullptr));
         finishButton->setText(QCoreApplication::translate("finishWindow", "Finish", nullptr));
         descriptionLabel->setText(QCoreApplication::translate("finishWindow", "TextLabel", nullptr));

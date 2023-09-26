@@ -23,6 +23,7 @@ MainWindow::~MainWindow()
 {
     delete ui;
     delete car;
+    delete carPic;
 }
 
 
@@ -41,9 +42,9 @@ void MainWindow::setImageLabel(QString str){
     string response = requester->getImageURL(modelMake);
     nlohmann::json json = nlohmann::json::parse(response);
 
-    QString url = QString::fromStdString(json["ymmts_img_list"][0]);
+    carPic = new QString(QString::fromStdString(json["ymmts_img_list"][0]));
 
-    requester->setImageURL(url,ui->imageViewer);
+    requester->setImageURL(*carPic,ui->imageViewer);
     delete requester;
 }
 
@@ -93,7 +94,7 @@ void MainWindow::on_modelMakeButton_clicked()
 void MainWindow::on_finishButton_clicked()
 {
     setEnabled(false);
-    finishWindow *newWindow = new finishWindow(this);
+    finishWindow *newWindow = new finishWindow(this,*carPic);
     newWindow->show();
 }
 
