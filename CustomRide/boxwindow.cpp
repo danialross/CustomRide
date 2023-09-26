@@ -29,13 +29,36 @@ boxWindow::~boxWindow()
 
 void boxWindow::on_doneButton_clicked()
 {
-    Car *car = mainWindow->getCar();
-    if(car->getModelMake() == ""){
-        mainWindow->getUi()->modelMakeButton->setStyleSheet("background-color: #FF6666; color: black");
+
+    QPushButton *button;
+    if(getter == &Car::getModelMake ){
+        button = mainWindow->getUi()->modelMakeButton;
+
+    }else if(getter == &Car::getDriveTrain){
+        button = mainWindow->getUi()->driveTrainButton;
+
+    }else if(getter == &Car::getEPlacement ){
+        button = mainWindow->getUi()->ePlacementButton;
+
+    }else if(getter == &Car::getEngine ){
+        button = mainWindow->getUi()->engineButton;
+
+    }else if(getter == &Car::getFuel ){
+        button = mainWindow->getUi()->fuelButton;
+
     }else{
-        mainWindow->getUi()->modelMakeButton->setStyleSheet("background-color: #66FF66; color: black");
+        button = mainWindow->getUi()->transButton;
+
     }
-    mainWindow->getUi()->modelMakeButton->update();
+
+    Car *car = mainWindow->getCar();
+    if((car->*getter)() == ""){
+        button->setStyleSheet("background-color: #FF6666; color: black");
+    }else{
+        button->setStyleSheet("background-color: #66FF66; color: black");
+    }
+    button->update();
+
     this->mainWindow->setEnabled(true);
     close();
 }
