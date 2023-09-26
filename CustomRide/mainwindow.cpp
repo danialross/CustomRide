@@ -56,7 +56,9 @@ void MainWindow::on_engineButton_clicked()
 
 void MainWindow::on_layoutButton_clicked()
 {
-
+    setEnabled(false);
+    boxWindow *newWindow = new boxWindow(this,"placement",&Car::getLayout,&Car::setLayout);
+    newWindow->show();
 }
 
 void MainWindow::on_driveTrainButton_clicked()
