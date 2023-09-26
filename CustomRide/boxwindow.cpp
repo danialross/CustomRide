@@ -71,8 +71,13 @@ void boxWindow::initCombobox(string filename){
 
 void boxWindow::on_comboBox_activated(int index)
 {
-    QString modelMake = ui->comboBox->currentText();
-    mainWindow->setImageLabel(modelMake);
-    (mainWindow->getCar()->*setter)(modelMake.toStdString());
+    QString selected = ui->comboBox->currentText();
+
+
+    if(setter == &Car::setModelMake){
+        mainWindow->setImageLabel(selected);
+    }
+
+    (mainWindow->getCar()->*setter)(selected.toStdString());
 }
 
