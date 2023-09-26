@@ -59,6 +59,7 @@ void boxWindow::on_doneButton_clicked()
     }
     button->update();
 
+    this->mainWindow->isCarComplete();
     this->mainWindow->setEnabled(true);
     close();
 }

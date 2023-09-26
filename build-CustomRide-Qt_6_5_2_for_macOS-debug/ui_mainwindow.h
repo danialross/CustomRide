@@ -82,8 +82,17 @@ public:
         exitButton->setStyleSheet(QString::fromUtf8(" background-color: white ; color: black"));
         finishButton = new QPushButton(centralwidget);
         finishButton->setObjectName("finishButton");
+        finishButton->setEnabled(false);
         finishButton->setGeometry(QRect(210, 310, 81, 31));
-        finishButton->setStyleSheet(QString::fromUtf8(" background-color: white ; color: black"));
+        finishButton->setStyleSheet(QString::fromUtf8("\n"
+"QPushButton {\n"
+"    background-color: white;\n"
+"    color: black;\n"
+"}\n"
+"QPushButton:disabled {\n"
+"    background-color: #888888;\n"
+"    color: #444444;\n"
+"}"));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");

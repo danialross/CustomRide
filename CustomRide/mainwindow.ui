@@ -173,6 +173,9 @@ Model</string>
     </property>
    </widget>
    <widget class="QPushButton" name="finishButton">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>210</x>
@@ -182,7 +185,15 @@ Model</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true"> background-color: white ; color: black</string>
+     <string notr="true">
+QPushButton {
+    background-color: white;
+    color: black;
+}
+QPushButton:disabled {
+    background-color: #888888;
+    color: #444444;
+}</string>
     </property>
     <property name="text">
      <string>Finish</string>

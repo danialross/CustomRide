@@ -108,6 +108,15 @@ Ui::MainWindow *MainWindow::getUi() const
     return ui;
 }
 
+void MainWindow::isCarComplete()
+{
+    if(car->isComplete()){
+        ui->finishButton->setEnabled(true);
+    }else{
+        ui->finishButton->setEnabled(false);
+    }
+}
+
 Car *MainWindow::getCar() const
 {
     return car;
