@@ -1,0 +1,3 @@
+Petrol
+Diesel
+E85

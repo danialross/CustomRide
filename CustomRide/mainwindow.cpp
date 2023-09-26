@@ -61,24 +61,25 @@ void MainWindow::on_layoutButton_clicked()
     newWindow->show();
 }
 
-void MainWindow::on_driveTrainButton_clicked()
+void MainWindow::on_transButton_clicked()
 {
-
+    setEnabled(false);
+    boxWindow *newWindow = new boxWindow(this,"transmission",&Car::getTransmisson,&Car::setTransmisson);
+    newWindow->show();
 }
 
-void MainWindow::on_exitButton_clicked()
+void MainWindow::on_driveTrainButton_clicked()
 {
-    close();
+    setEnabled(false);
+    boxWindow *newWindow = new boxWindow(this,"driveTrain",&Car::getDriveTrain,&Car::setDriveTrain);
+    newWindow->show();
 }
 
 void MainWindow::on_fuelButton_clicked()
 {
-
-}
-
-void MainWindow::on_transButton_clicked()
-{
-
+    setEnabled(false);
+    boxWindow *newWindow = new boxWindow(this,"fuel",&Car::getFuel,&Car::setFuel);
+    newWindow->show();
 }
 
 void MainWindow::on_modelMakeButton_clicked()
@@ -91,6 +92,11 @@ void MainWindow::on_modelMakeButton_clicked()
 void MainWindow::on_finishButton_clicked()
 {
 
+}
+
+void MainWindow::on_exitButton_clicked()
+{
+    close();
 }
 
 Ui::MainWindow *MainWindow::getUi() const

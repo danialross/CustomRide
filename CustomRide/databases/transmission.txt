@@ -1,0 +1,8 @@
+Manual Transmission (MT)
+Automatic Transmission (AT)
+Semi-Automatic Transmission
+Continuous Variable Transmission (CVT)
+Dual-Clutch Transmission (DCT)
+Automated Manual Transmission (AMT)
+Hybrid Transmission
+Hydrostatic Transmission
