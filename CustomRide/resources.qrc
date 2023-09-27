@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>databases/cars.txt</file>
+        <file>databases/driveTrain.txt</file>
+        <file>databases/engines.txt</file>
+        <file>databases/fuel.txt</file>
+        <file>databases/placement.txt</file>
+        <file>databases/transmission.txt</file>
+    </qresource>
+</RCC>

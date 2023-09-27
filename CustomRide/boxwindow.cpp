@@ -65,31 +65,28 @@ void boxWindow::on_doneButton_clicked()
 }
 
 void boxWindow::initCombobox(string filename){
-    // Specify the full or relative path to the file
-    filesystem::path directory = filesystem::current_path().parent_path().parent_path().parent_path().parent_path();
-    directory /= "CustomRide/databases/";
-    string filePath = directory.string() + filename + ".txt";
 
-    // Create an ifstream object to read from the file
-    ifstream inputFile(filePath);
+    filesystem::path path = ":/databases/" + filename + ".txt";
+    QFile resourceFile(path);
 
-    // Check if the file opened successfully
-    if (!inputFile.is_open()) {
-        cerr << "Error opening the file." << std::endl;
-        return;
+    if (!resourceFile.open(QIODevice::ReadOnly))
+    {
+        qDebug() << "Failed to open resource file";
+        return ;
     }
 
-    // Read and display the file line by line
-    string line;
+    QTextStream textStream(&resourceFile);
     int counter = 1;
     ui->comboBox->addItem("");
-    while (getline(inputFile, line)) {
-        ui->comboBox->addItem(QString::fromStdString(line));
-        map->insert({line,counter++});
+
+    while (!textStream.atEnd())
+    {
+        QString line = textStream.readLine();
+        ui->comboBox->addItem(line);
+        map->insert({line.toStdString(),counter++});
     }
 
-    // Close the file
-    inputFile.close();
+    resourceFile.close();
 }
 
 

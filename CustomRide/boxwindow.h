@@ -2,7 +2,7 @@
 #define BOXWINDOW_H
 
 #include <QMainWindow>
-#include <fstream>
+#include <QFile>
 #include <mainwindow.h>
 
 QT_BEGIN_NAMESPACE

@@ -57,7 +57,8 @@ SOURCES       = ../CustomRide/boxwindow.cpp \
 		../CustomRide/finishwindow.cpp \
 		../CustomRide/httprequest.cpp \
 		../CustomRide/main.cpp \
-		../CustomRide/mainwindow.cpp moc_boxwindow.cpp \
+		../CustomRide/mainwindow.cpp qrc_resources.cpp \
+		moc_boxwindow.cpp \
 		moc_finishwindow.cpp \
 		moc_mainwindow.cpp
 OBJECTS       = boxwindow.o \
@@ -66,6 +67,7 @@ OBJECTS       = boxwindow.o \
 		httprequest.o \
 		main.o \
 		mainwindow.o \
+		qrc_resources.o \
 		moc_boxwindow.o \
 		moc_finishwindow.o \
 		moc_mainwindow.o
@@ -782,6 +784,7 @@ Makefile: ../CustomRide/CustomRide.pro ../../../../Qt/6.5.2/macos/mkspecs/macx-c
 		../../../../Qt/6.5.2/macos/mkspecs/features/yacc.prf \
 		../../../../Qt/6.5.2/macos/mkspecs/features/lex.prf \
 		../CustomRide/CustomRide.pro \
+		../CustomRide/resources.qrc \
 		../../../../Qt/6.5.2/macos/lib/QtWidgets.framework/Resources/QtWidgets.prl \
 		../../../../Qt/6.5.2/macos/lib/QtGui.framework/Resources/QtGui.prl \
 		../../../../Qt/6.5.2/macos/lib/QtNetwork.framework/Resources/QtNetwork.prl \
@@ -1127,6 +1130,7 @@ Makefile: ../CustomRide/CustomRide.pro ../../../../Qt/6.5.2/macos/mkspecs/macx-c
 ../../../../Qt/6.5.2/macos/mkspecs/features/yacc.prf:
 ../../../../Qt/6.5.2/macos/mkspecs/features/lex.prf:
 ../CustomRide/CustomRide.pro:
+../CustomRide/resources.qrc:
 ../../../../Qt/6.5.2/macos/lib/QtWidgets.framework/Resources/QtWidgets.prl:
 ../../../../Qt/6.5.2/macos/lib/QtGui.framework/Resources/QtGui.prl:
 ../../../../Qt/6.5.2/macos/lib/QtNetwork.framework/Resources/QtNetwork.prl:
@@ -1155,6 +1159,7 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
+	$(COPY_FILE) --parents ../CustomRide/resources.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents ../CustomRide/boxwindow.h ../CustomRide/car.h ../CustomRide/finishwindow.h ../CustomRide/httprequest.h ../CustomRide/mainwindow.h $(DISTDIR)/
 	$(COPY_FILE) --parents ../CustomRide/boxwindow.cpp ../CustomRide/car.cpp ../CustomRide/finishwindow.cpp ../CustomRide/httprequest.cpp ../CustomRide/main.cpp ../CustomRide/mainwindow.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../CustomRide/boxwindow.ui ../CustomRide/finishwindow.ui ../CustomRide/mainwindow.ui $(DISTDIR)/
@@ -1183,14 +1188,27 @@ check: first
 
 benchmark: first
 
-compiler_rcc_make_all:
+compiler_rcc_make_all: qrc_resources.cpp
 compiler_rcc_clean:
+	-$(DEL_FILE) qrc_resources.cpp
+qrc_resources.cpp: ../CustomRide/resources.qrc \
+		../../../../Qt/6.5.2/macos/libexec/rcc \
+		../CustomRide/databases/transmission.txt \
+		../CustomRide/databases/engines.txt \
+		../CustomRide/databases/fuel.txt \
+		../CustomRide/databases/placement.txt \
+		../CustomRide/databases/cars.txt \
+		../CustomRide/databases/driveTrain.txt
+	/Users/danialross/Qt/6.5.2/macos/libexec/rcc -name resources --no-zstd ../CustomRide/resources.qrc -o qrc_resources.cpp
+
 compiler_moc_header_make_all: moc_boxwindow.cpp moc_finishwindow.cpp moc_mainwindow.cpp
 compiler_moc_header_clean:
 	-$(DEL_FILE) moc_boxwindow.cpp moc_finishwindow.cpp moc_mainwindow.cpp
 moc_boxwindow.cpp: ../CustomRide/boxwindow.h \
 		../../../../Qt/6.5.2/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../../Qt/6.5.2/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../../../../Qt/6.5.2/macos/lib/QtCore.framework/Headers/QFile \
+		../../../../Qt/6.5.2/macos/lib/QtCore.framework/Headers/qfile.h \
 		../CustomRide/mainwindow.h \
 		../CustomRide/car.h \
 		../../../../Qt/6.5.2/macos/libexec/moc
@@ -1238,7 +1256,7 @@ compiler_yacc_impl_make_all:
 compiler_yacc_impl_clean:
 compiler_lex_make_all:
 compiler_lex_clean:
-compiler_clean: compiler_moc_header_clean compiler_uic_clean 
+compiler_clean: compiler_rcc_clean compiler_moc_header_clean compiler_uic_clean 
 
 ####### Compile
 
@@ -1246,6 +1264,8 @@ boxwindow.o: ../CustomRide/boxwindow.cpp ui_boxwindow.h \
 		../CustomRide/boxwindow.h \
 		../../../../Qt/6.5.2/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../../Qt/6.5.2/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../../../../Qt/6.5.2/macos/lib/QtCore.framework/Headers/QFile \
+		../../../../Qt/6.5.2/macos/lib/QtCore.framework/Headers/qfile.h \
 		../CustomRide/mainwindow.h \
 		../CustomRide/car.h \
 		ui_mainwindow.h
@@ -1294,12 +1314,17 @@ mainwindow.o: ../CustomRide/mainwindow.cpp ../CustomRide/mainwindow.h \
 		../CustomRide/car.h \
 		ui_mainwindow.h \
 		../CustomRide/boxwindow.h \
+		../../../../Qt/6.5.2/macos/lib/QtCore.framework/Headers/QFile \
+		../../../../Qt/6.5.2/macos/lib/QtCore.framework/Headers/qfile.h \
 		../CustomRide/finishwindow.h \
 		../CustomRide/httprequest.h \
 		../../../../Qt/6.5.2/macos/lib/QtWidgets.framework/Headers/QLabel \
 		../../../../Qt/6.5.2/macos/lib/QtWidgets.framework/Headers/qlabel.h \
 		../CustomRide/nlohmann/json.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../CustomRide/mainwindow.cpp
+
+qrc_resources.o: qrc_resources.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_resources.o qrc_resources.cpp
 
 moc_boxwindow.o: moc_boxwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_boxwindow.o moc_boxwindow.cpp
