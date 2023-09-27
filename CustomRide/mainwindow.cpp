@@ -12,6 +12,8 @@ MainWindow::MainWindow(QWidget *parent)
     carPic(new QString(""))
 {
     ui->setupUi(this);
+    setWindowTitle(QString("CustomRide"));
+    setWindowFlags(Qt::CustomizeWindowHint | Qt::WindowTitleHint);
 
     QString path = "/Users/danialross/Documents/GitHub/CustomRide/CustomRide/logo.png";
     QPixmap pixmap = QPixmap(path);

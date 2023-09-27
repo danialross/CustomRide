@@ -9,6 +9,8 @@ finishWindow::finishWindow(MainWindow *mainWindow,QString img,QWidget *parent) :
     this->mainWindow = mainWindow;
 
     ui->setupUi(this);
+    setWindowTitle(QString(""));
+    setWindowFlags(Qt::CustomizeWindowHint | Qt::WindowTitleHint);
 
     httpRequest *requester = new httpRequest();
     requester->setImageURL(img,ui->imageViewer);

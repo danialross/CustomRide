@@ -1319,8 +1319,7 @@ mainwindow.o: ../CustomRide/mainwindow.cpp ../CustomRide/mainwindow.h \
 		../CustomRide/finishwindow.h \
 		../CustomRide/httprequest.h \
 		../../../../Qt/6.5.2/macos/lib/QtWidgets.framework/Headers/QLabel \
-		../../../../Qt/6.5.2/macos/lib/QtWidgets.framework/Headers/qlabel.h \
-		../CustomRide/nlohmann/json.hpp
+		../../../../Qt/6.5.2/macos/lib/QtWidgets.framework/Headers/qlabel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../CustomRide/mainwindow.cpp
 
 qrc_resources.o: qrc_resources.cpp 

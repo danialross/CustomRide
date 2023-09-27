@@ -11,7 +11,8 @@ boxWindow::boxWindow(MainWindow *mainWindow,string db,getterFunc getter,setterFu
 {
     this->mainWindow = mainWindow;
     ui->setupUi(this);
-
+    setWindowTitle(QString(""));
+    setWindowFlags(Qt::CustomizeWindowHint | Qt::WindowTitleHint);
     initCombobox(db);
 
     string car = (mainWindow->getCar()->*getter)();
