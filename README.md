@@ -6,4 +6,8 @@ https://www.vinaudit.com/data-products#vehicle-images-api
 Application requires cURL:
 instruction to install -> https://everything.curl.dev/get
 
+Current Supported Devices:
+MacOS
+
+
 
